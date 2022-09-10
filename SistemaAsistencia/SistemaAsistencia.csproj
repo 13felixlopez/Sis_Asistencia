@@ -52,6 +52,12 @@
     <Compile Include="ConexionRemota.Designer.cs">
       <DependentUpon>ConexionRemota.cs</DependentUpon>
     </Compile>
+    <Compile Include="CopiasBd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CopiasBd.Designer.cs">
+      <DependentUpon>CopiasBd.cs</DependentUpon>
+    </Compile>
     <Compile Include="CtlUsuarios.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -61,6 +67,7 @@
     <Compile Include="Datos\Conexion.cs" />
     <Compile Include="Datos\Dasistencias.cs" />
     <Compile Include="Datos\Dcargos.cs" />
+    <Compile Include="Datos\DcopiasBd.cs" />
     <Compile Include="Datos\Dmodulos.cs" />
     <Compile Include="Datos\Dpermisos.cs" />
     <Compile Include="Datos\Dusuarios.cs" />
@@ -82,6 +89,7 @@
     <Compile Include="Logica\Desencryptacion.cs" />
     <Compile Include="Logica\Lasistencias.cs" />
     <Compile Include="Logica\Lcargos.cs" />
+    <Compile Include="Logica\LCopiasBd.cs" />
     <Compile Include="Logica\Lmodulos.cs" />
     <Compile Include="Logica\Lpersonal.cs" />
     <Compile Include="Login.cs">
@@ -104,6 +112,12 @@
     <Compile Include="Personal.Designer.cs">
       <DependentUpon>Personal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Preplanilla.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Preplanilla.Designer.cs">
+      <DependentUpon>Preplanilla.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsuarioPrincipal.cs">
@@ -112,6 +126,9 @@
     <Compile Include="UsuarioPrincipal.Designer.cs">
       <DependentUpon>UsuarioPrincipal.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CopiasBd.resx">
+      <DependentUpon>CopiasBd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CtlUsuarios.resx">
       <DependentUpon>CtlUsuarios.cs</DependentUpon>
     </EmbeddedResource>

@@ -52,6 +52,10 @@
             this.panel21 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
             this.panel20 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
             this.btnRespaldos = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -59,6 +63,7 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.btnRestaurar = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.dlg = new System.Windows.Forms.OpenFileDialog();
             this.panel5.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -69,6 +74,7 @@
             this.panel4.SuspendLayout();
             this.panel18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel11.SuspendLayout();
             this.SuspendLayout();
@@ -178,6 +184,7 @@
             this.btnConsultas.TabIndex = 1;
             this.btnConsultas.Text = "Pre planilla";
             this.btnConsultas.UseVisualStyleBackColor = false;
+            this.btnConsultas.Click += new System.EventHandler(this.btnConsultas_Click);
             // 
             // panel3
             // 
@@ -208,6 +215,7 @@
             this.Icono.Location = new System.Drawing.Point(0, 0);
             this.Icono.Name = "Icono";
             this.Icono.Size = new System.Drawing.Size(60, 54);
+            this.Icono.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Icono.TabIndex = 0;
             this.Icono.TabStop = false;
             // 
@@ -282,6 +290,7 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.panel18);
+            this.panel4.Controls.Add(this.panel2);
             this.panel4.Controls.Add(this.panel14);
             this.panel4.Controls.Add(this.panel11);
             this.panel4.Controls.Add(this.panel8);
@@ -299,10 +308,10 @@
             this.panel18.Controls.Add(this.panel19);
             this.panel18.Controls.Add(this.panel20);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel18.Location = new System.Drawing.Point(0, 260);
+            this.panel18.Location = new System.Drawing.Point(0, 325);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(165, 89);
-            this.panel18.TabIndex = 5;
+            this.panel18.Size = new System.Drawing.Size(165, 112);
+            this.panel18.TabIndex = 7;
             // 
             // pictureBox1
             // 
@@ -310,7 +319,7 @@
             this.pictureBox1.Image = global::SistemaAsistencia.Properties.Resources.Logo_removebg_preview;
             this.pictureBox1.Location = new System.Drawing.Point(10, 10);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(145, 79);
+            this.pictureBox1.Size = new System.Drawing.Size(145, 102);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -320,7 +329,7 @@
             this.panel21.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel21.Location = new System.Drawing.Point(155, 10);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(10, 79);
+            this.panel21.Size = new System.Drawing.Size(10, 102);
             this.panel21.TabIndex = 4;
             // 
             // panel19
@@ -328,7 +337,7 @@
             this.panel19.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel19.Location = new System.Drawing.Point(0, 10);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(10, 79);
+            this.panel19.Size = new System.Drawing.Size(10, 102);
             this.panel19.TabIndex = 1;
             // 
             // panel20
@@ -338,6 +347,52 @@
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(165, 10);
             this.panel20.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel17);
+            this.panel2.Controls.Add(this.panel22);
+            this.panel2.Controls.Add(this.btnSalir);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 260);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(165, 65);
+            this.panel2.TabIndex = 6;
+            // 
+            // panel17
+            // 
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel17.Location = new System.Drawing.Point(0, 10);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(10, 55);
+            this.panel17.TabIndex = 1;
+            // 
+            // panel22
+            // 
+            this.panel22.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel22.Location = new System.Drawing.Point(0, 0);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(165, 10);
+            this.panel22.TabIndex = 0;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Image = global::SistemaAsistencia.Properties.Resources.Atras;
+            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalir.Location = new System.Drawing.Point(0, 0);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(165, 65);
+            this.btnSalir.TabIndex = 3;
+            this.btnSalir.Text = "<----Salir";
+            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // panel14
             // 
@@ -367,6 +422,7 @@
             this.btnRespaldos.Text = "Respaldos";
             this.btnRespaldos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRespaldos.UseVisualStyleBackColor = false;
+            this.btnRespaldos.Click += new System.EventHandler(this.btnRespaldos_Click);
             // 
             // panel15
             // 
@@ -412,6 +468,7 @@
             this.btnRestaurar.Text = "Restaurar Bd";
             this.btnRestaurar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRestaurar.UseVisualStyleBackColor = false;
+            this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
             // 
             // panel13
             // 
@@ -420,6 +477,10 @@
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(165, 10);
             this.panel13.TabIndex = 0;
+            // 
+            // dlg
+            // 
+            this.dlg.FileName = "openFileDialog1";
             // 
             // MenuPrincipal
             // 
@@ -430,6 +491,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "MenuPrincipal";
             this.Text = "Menu Principal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.panel5.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
@@ -441,6 +503,7 @@
             this.panel4.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -468,18 +531,23 @@
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Button btnRespaldos;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.PictureBox Icono;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.Panel panel19;
+        private System.Windows.Forms.Panel panel20;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.OpenFileDialog dlg;
     }
 }
 
