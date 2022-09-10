@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.Data;
 using System.Linq;
@@ -25,7 +21,40 @@ namespace SistemaAsistencia
         int Idusuario;
         string login;
         string estado;
-        private void panelRegistro_Paint(object sender, PaintEventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+            habilitarPaneles();
+            MostrarModulos();
+        }
+        private void Limpiar()
+        {
+            txtnombre.Clear();
+            txtcontraseña.Clear();
+            txtusuario.Clear();
+            txtusuario.Enabled = true;
+            datalistadoModulos.Enabled = true;
+        }
+        private void habilitarPaneles()
+        {
+            panelRegistro.Visible = true;
+            lblanuncioIcono.Visible = true;
+            panelIcono.Visible = false;
+            panelRegistro.Dock = DockStyle.Fill;
+            panelRegistro.BringToFront();
+            btnguardar.Visible = true;
+            btnActualizar.Visible = false;
+        }
+        private void MostrarModulos()
+        {
+            Dmodulos funcion = new Dmodulos();
+            DataTable dt = new DataTable();
+            funcion.mostrar_Modulos(ref dt);
+            datalistadoModulos.DataSource = dt;
+            datalistadoModulos.Columns[1].Visible = false;
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -45,24 +74,31 @@ namespace SistemaAsistencia
                         else
                         {
                             MessageBox.Show("Seleccione un Icono");
+
                         }
+
                     }
                     else
                     {
                         MessageBox.Show("Ingrese la contraseña");
+
+
                     }
                 }
                 else
                 {
                     MessageBox.Show("Ingrese el Usuario");
+
+
                 }
             }
             else
             {
+
                 MessageBox.Show("Ingrese el Nombre");
             }
-        }
 
+        }
         private void insertarUsuarios()
         {
             Lusuarios parametros = new Lusuarios();
@@ -78,14 +114,8 @@ namespace SistemaAsistencia
                 ObtenerIdUsuario();
                 InsertarPermisos();
             }
-        }
 
-        private void ObtenerIdUsuario()
-        {
-            Dusuarios funcion = new Dusuarios();
-            funcion.ObtenerIdUsuario(ref Idusuario, txtusuario.Text);
         }
-
         private void InsertarPermisos()
         {
             foreach (DataGridViewRow row in datalistadoModulos.Rows)
@@ -99,22 +129,23 @@ namespace SistemaAsistencia
                     parametros.IdModulo = IdModulo;
                     parametros.IdUsuario = Idusuario;
                     funcion.Insertar_Permisos(parametros);
+
                 }
             }
             MostrarUsuarios();
             panelRegistro.Visible = false;
         }
-
         private void MostrarUsuarios()
         {
             DataTable dt = new DataTable();
             Dusuarios funcion = new Dusuarios();
             funcion.mostrar_Usuarios(ref dt);
             datalistadoUsuarios.DataSource = dt;
-            DiseñarDTvUsuarios();
-        }
+            DiseñarDtvUsuarios();
 
-        private void DiseñarDTvUsuarios()
+
+        }
+        private void DiseñarDtvUsuarios()
         {
             Bases.DiseñoDtv(ref datalistadoUsuarios);
             Bases.DiseñoDtvEliminar(ref datalistadoUsuarios);
@@ -122,61 +153,29 @@ namespace SistemaAsistencia
             datalistadoUsuarios.Columns[5].Visible = false;
             datalistadoUsuarios.Columns[6].Visible = false;
         }
-
-        private void MostrarModulos()
+        private void ObtenerIdUsuario()
         {
-            Dmodulos funcion = new Dmodulos();
-            DataTable dt = new DataTable();
-            funcion.mostrar_Modulos(ref dt);
-            datalistadoModulos.DataSource = dt;
-            datalistadoModulos.Columns[1].Visible = false;
-        }
+            Dusuarios funcion = new Dusuarios();
+            funcion.ObtenerIdUsuario(ref Idusuario, txtusuario.Text);
 
-        private void habilitarPaneles()
-        {
-            panelRegistro.Visible = true;
-            lblanuncioIcono.Visible = true;
-            panelIcono.Visible = false;
-            panelRegistro.Dock = DockStyle.Fill;
-            panelRegistro.BringToFront();
-            btnguardar.Visible = true;
-            btnActualizar.Visible = false;
-        }
-
-        private void Limpiar()
-        {
-            txtnombre.Clear();
-            txtcontraseña.Clear();
-            txtusuario.Clear();
-            txtusuario.Enabled = true;
-            datalistadoModulos.Enabled = true;
-        }
-
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            Limpiar();
-            habilitarPaneles();
-            MostrarModulos();
         }
 
         private void lblanuncioIcono_Click(object sender, EventArgs e)
         {
             MostrarPanelIcono();
         }
-
         private void MostrarPanelIcono()
         {
             panelIcono.Visible = true;
             panelIcono.Dock = DockStyle.Fill;
             panelIcono.BringToFront();
         }
-
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             Icono.Image = pictureBox3.Image;
             ocultarPanelIconos();
-        }
 
+        }
         private void ocultarPanelIconos()
         {
             panelIcono.Visible = false;
@@ -281,9 +280,9 @@ namespace SistemaAsistencia
             if (e.ColumnIndex == datalistadoUsuarios.Columns["Editar"].Index)
             {
                 obtenerEstado();
-                if (estado == "ELIMINADO") 
+                if (estado == "ELIMINADO")
                 {
-                    DialogResult resultado = MessageBox.Show("Este usuario se elimino. ¿Desea volver a Habilitarlo?", "Restauracion de Registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    DialogResult resultado = MessageBox.Show("Este Usuario se Elimino. ¿Desea Volver a Habilitarlo?", "Restauracion de registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (resultado == DialogResult.OK)
                     {
                         RestaurarUsuario();
@@ -293,23 +292,45 @@ namespace SistemaAsistencia
                 {
                     ObtenerDatos();
                 }
-                if (e.ColumnIndex == datalistadoUsuarios.Columns["Eliminar"].Index)
+
+            }
+            if (e.ColumnIndex == datalistadoUsuarios.Columns["Eliminar"].Index)
+            {
+                DialogResult resultado = MessageBox.Show("¿Realmente desea eliminar este Registro?", "Eliminando registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (resultado == DialogResult.OK)
                 {
-                    DialogResult resultado = MessageBox.Show("¿Realmente desea eliminar este registro?", "Eliminando registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    if (resultado == DialogResult.OK)
-                    {
-                        capturarIdUsuario();
-                        EliminarUsuarios();
-                    }
+                    capturarIdUsuario();
+                    EliminarUsuarios();
                 }
+
             }
         }
-
+        private void RestaurarUsuario()
+        {
+            capturarIdUsuario();
+            Lusuarios parametros = new Lusuarios();
+            Dusuarios funcion = new Dusuarios();
+            parametros.IdUsuario = Idusuario;
+            if (funcion.restaurar_usuario(parametros) == true)
+            {
+                MostrarUsuarios();
+            }
+        }
+        private void EliminarUsuarios()
+        {
+            Lusuarios parametros = new Lusuarios();
+            Dusuarios funcion = new Dusuarios();
+            parametros.IdUsuario = Idusuario;
+            parametros.Login = login;
+            if (funcion.eliminar_Usuarios(parametros) == true)
+            {
+                MostrarUsuarios();
+            }
+        }
         private void obtenerEstado()
         {
             estado = datalistadoUsuarios.SelectedCells[7].Value.ToString();
         }
-
         private void ObtenerDatos()
         {
             capturarIdUsuario();
@@ -326,24 +347,19 @@ namespace SistemaAsistencia
                 datalistadoModulos.Enabled = true;
             }
             txtcontraseña.Text = datalistadoUsuarios.SelectedCells[5].Value.ToString();
+
             Icono.BackgroundImage = null;
             byte[] b = (byte[])(datalistadoUsuarios.SelectedCells[6].Value);
             MemoryStream ms = new MemoryStream(b);
             Icono.Image = Image.FromStream(ms);
             panelRegistro.Visible = true;
             panelRegistro.Dock = DockStyle.Fill;
-            lblanuncioIcono.Visible = true;
-            btnActualizar.Visible = false;
+            lblanuncioIcono.Visible = false;
+            btnActualizar.Visible = true;
+            btnguardar.Visible = false;
             MostrarModulos();
             mostrarPermisos();
         }
-
-        private void capturarIdUsuario()
-        {
-            Idusuario = Convert.ToInt32(datalistadoUsuarios.SelectedCells[2].Value);
-            login = datalistadoUsuarios.SelectedCells[4].Value.ToString();
-        }
-
         private void mostrarPermisos()
         {
             DataTable dt = new DataTable();
@@ -364,29 +380,12 @@ namespace SistemaAsistencia
                 }
             }
         }
-
-        private void EliminarUsuarios()
+        private void capturarIdUsuario()
         {
-            Lusuarios parametros = new Lusuarios();
-            Dusuarios funcion = new Dusuarios();
-            parametros.IdUsuario = Idusuario;
-            parametros.Login = login;
-            if (funcion.eliminar_Usuarios(parametros) == true)
-            {
-                MostrarUsuarios();
-            }
-        }
+            Idusuario = Convert.ToInt32(datalistadoUsuarios.SelectedCells[2].Value);
+            login = datalistadoUsuarios.SelectedCells[4].Value.ToString();
 
-        private void RestaurarUsuario()
-        {
-            capturarIdUsuario();
-            Lusuarios parametros = new Lusuarios();
-            Dusuarios funcion = new Dusuarios();
-            parametros.IdUsuario = Idusuario;
-            if (funcion.restaurar_usuario(parametros) == true)
-            {
-                MostrarUsuarios();
-            }
+
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -404,24 +403,30 @@ namespace SistemaAsistencia
                         else
                         {
                             MessageBox.Show("Seleccione un Icono");
+
                         }
+
                     }
                     else
                     {
                         MessageBox.Show("Ingrese la contraseña");
+
+
                     }
                 }
                 else
                 {
                     MessageBox.Show("Ingrese el Usuario");
+
+
                 }
             }
             else
             {
+
                 MessageBox.Show("Ingrese el Nombre");
             }
         }
-
         private void editarUsuarios()
         {
             Lusuarios parametros = new Lusuarios();
@@ -439,27 +444,26 @@ namespace SistemaAsistencia
                 InsertarPermisos();
             }
         }
-
         private void eliminarPermisos()
         {
             Lpermisos parametros = new Lpermisos();
             Dpermisos funcion = new Dpermisos();
             parametros.IdUsuario = Idusuario;
             funcion.Eliminar_Permisos(parametros);
+
         }
 
         private void txtbuscador_TextChanged(object sender, EventArgs e)
         {
             BuscarUsuarios();
         }
-
         private void BuscarUsuarios()
         {
             DataTable dt = new DataTable();
             Dusuarios funcion = new Dusuarios();
             funcion.buscar_Usuarios(ref dt, txtbuscador.Text);
             datalistadoUsuarios.DataSource = dt;
-            DiseñarDTvUsuarios();
+            DiseñarDtvUsuarios();
         }
     }
 }

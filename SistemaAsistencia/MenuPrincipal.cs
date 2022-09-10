@@ -60,7 +60,7 @@ namespace SistemaAsistencia
                 {
                     btnPersonal.Enabled = true;
                 }
-                if (Modulo=="Respaldo")
+                if (Modulo=="Respaldos")
                 {
                     btnRespaldos.Enabled = true;
                     btnRestaurar.Enabled = true;

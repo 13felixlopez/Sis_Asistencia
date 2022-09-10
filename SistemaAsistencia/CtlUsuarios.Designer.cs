@@ -533,7 +533,6 @@ namespace SistemaAsistencia
             this.panelRegistro.Size = new System.Drawing.Size(982, 627);
             this.panelRegistro.TabIndex = 6;
             this.panelRegistro.Visible = false;
-            this.panelRegistro.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRegistro_Paint);
             // 
             // panelIcono
             // 
