@@ -70,6 +70,10 @@ namespace SistemaAsistencia
                     btnRespaldos.Enabled = true;
                     btnRestaurar.Enabled = true;
                 }
+                if (Modulo == "Registro")
+                {
+                    btnRegistro.Enabled = true;
+                }
             }
         }
 
@@ -182,6 +186,13 @@ namespace SistemaAsistencia
             Preplanilla control = new Preplanilla();
             control.Dock = DockStyle.Fill;
             PanelPadre.Controls.Add(control);
+        }
+
+        private void btnRegistro_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            TomarAsistencia frm = new TomarAsistencia();
+            frm.ShowDialog();
         }
     }
 }

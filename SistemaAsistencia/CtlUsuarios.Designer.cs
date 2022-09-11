@@ -34,7 +34,6 @@ namespace SistemaAsistencia
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.lblanuncioIcono = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnguardar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
@@ -76,6 +75,7 @@ namespace SistemaAsistencia
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.Icono = new System.Windows.Forms.PictureBox();
+            this.lblanuncioIcono = new System.Windows.Forms.Label();
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -157,18 +157,6 @@ namespace SistemaAsistencia
             this.pictureBox10.TabIndex = 3;
             this.pictureBox10.TabStop = false;
             this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
-            // 
-            // lblanuncioIcono
-            // 
-            this.lblanuncioIcono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblanuncioIcono.ForeColor = System.Drawing.Color.White;
-            this.lblanuncioIcono.Location = new System.Drawing.Point(463, 19);
-            this.lblanuncioIcono.Name = "lblanuncioIcono";
-            this.lblanuncioIcono.Size = new System.Drawing.Size(136, 121);
-            this.lblanuncioIcono.TabIndex = 617;
-            this.lblanuncioIcono.Text = "Elije un Icono";
-            this.lblanuncioIcono.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblanuncioIcono.Click += new System.EventHandler(this.lblanuncioIcono_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -513,8 +501,8 @@ namespace SistemaAsistencia
             // panelRegistro
             // 
             this.panelRegistro.BackColor = System.Drawing.Color.White;
-            this.panelRegistro.Controls.Add(this.panelIcono);
             this.panelRegistro.Controls.Add(this.lblanuncioIcono);
+            this.panelRegistro.Controls.Add(this.panelIcono);
             this.panelRegistro.Controls.Add(this.Icono);
             this.panelRegistro.Controls.Add(this.flowLayoutPanel1);
             this.panelRegistro.Controls.Add(this.panel6);
@@ -645,6 +633,18 @@ namespace SistemaAsistencia
             this.Icono.TabStop = false;
             this.Icono.Click += new System.EventHandler(this.Icono_Click);
             // 
+            // lblanuncioIcono
+            // 
+            this.lblanuncioIcono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblanuncioIcono.ForeColor = System.Drawing.Color.White;
+            this.lblanuncioIcono.Location = new System.Drawing.Point(463, 19);
+            this.lblanuncioIcono.Name = "lblanuncioIcono";
+            this.lblanuncioIcono.Size = new System.Drawing.Size(136, 121);
+            this.lblanuncioIcono.TabIndex = 617;
+            this.lblanuncioIcono.Text = "Elije un Icono";
+            this.lblanuncioIcono.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblanuncioIcono.Click += new System.EventHandler(this.lblanuncioIcono_Click);
+            // 
             // CtlUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -689,8 +689,6 @@ namespace SistemaAsistencia
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.Label lblanuncioIcono;
-        private System.Windows.Forms.PictureBox Icono;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.Button btnActualizar;
@@ -731,5 +729,7 @@ namespace SistemaAsistencia
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label lblanuncioIcono;
+        private System.Windows.Forms.PictureBox Icono;
     }
 }

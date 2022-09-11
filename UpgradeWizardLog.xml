@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="_UpgradeWizard_Files\UpgradeWizardLog.xslt"?>
+<log>
+  <event>Get project references.</event>
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia\SistemaAsistencia.csproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia\App.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia\App.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia\App.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia\App.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia\App.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia\App.config" />
+  <event action="Analyze" type="Success" name="App.config" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia\App.config" />
+  <event action="Analyze" type="Success" name="CopiasBd.resx" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia\CopiasBd.resx" />
+  <event action="Analyze" type="Success" name="CtlUsuarios.resx" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia\CtlUsuarios.resx" />
+  <event action="Analyze" type="Success" name="EleccionServidor.resx" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia\EleccionServidor.resx" />
+  <event action="Analyze" type="Success" name="InstacionBd.resx" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia\InstacionBd.resx" />
+  <event action="Analyze" type="Success" name="Login.resx" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia\Login.resx" />
+  <event action="Analyze" type="Success" name="MenuPrincipal.resx" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia\MenuPrincipal.resx" />
+  <event action="Analyze" type="Success" name="Personal.resx" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia\Personal.resx" />
+  <event action="Analyze" type="Success" name="Preplanilla.resx" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia\Preplanilla.resx" />
+  <event action="Analyze" type="Success" name="Resources.resx" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia\Properties\Resources.resx" />
+  <event action="Analyze" type="Success" name="TomarAsistencia.resx" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia\TomarAsistencia.resx" />
+  <event action="Analyze" type="Success" name="UsuarioPrincipal.resx" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia\UsuarioPrincipal.resx" />
+  <event action="Analyze" type="Success" name="SistemaAsistencia" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia\SistemaAsistencia.csproj" />
+  <event action="Analyze" type="Success" name="SistemaAsistencia" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia.sln" />
+  <event action="Backup" type="Success" name="SistemaAsistencia" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia\SistemaAsistencia.csproj" />
+  <event action="Upgrade" type="Success" name="Assembly References" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia\SistemaAsistencia.csproj" />
+  <event action="Upgrade" type="Success" name="SistemaAsistencia" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia\SistemaAsistencia.csproj" />
+  <event action="Upgrade" type="Success" name="SistemaAsistencia" path="C:\Users\lfeli\source\repos\SistemaAsistencia\SistemaAsistencia.sln" />
+</log>

@@ -14,6 +14,6 @@ namespace SistemaAsistencia.Logica
         public DateTime Fecha_salida { get; set; }
         public string Estado { get; set; }
         public double Horas { get; set; }
-        public string Observaciones { get; set; }
+        public string Observacion { get; set; }
     }
 }
