@@ -47,6 +47,7 @@ namespace SistemaAsistencia
         {
             calcular_numero_de_semana();
             ReporteAsistencias();
+            txthasta.Text = txtdesde.Text;
         }
 
         private void txthasta_ValueChanged(object sender, EventArgs e)

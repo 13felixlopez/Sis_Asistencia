@@ -78,7 +78,7 @@ namespace SistemaAsistencia
         {
             Lmodulos parametros = new Lmodulos();
             Dmodulos funcion = new Dmodulos();
-            var Modulos = new List<string> { "Usuarios", "Respaldos", "Personal", "PrePlanillas" };
+            var Modulos = new List<string> { "Usuarios", "Respaldos", "Personal", "PrePlanillas", "Registro" };
             foreach (var Modulo in Modulos)
             {
                 parametros.Modulo = Modulo;

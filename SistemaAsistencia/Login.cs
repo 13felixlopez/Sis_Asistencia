@@ -118,6 +118,7 @@ namespace SistemaAsistencia
             Usuario = Convert.ToString(((PictureBox)sender).Tag);
             Icono.Image = ((PictureBox)sender).Image;
             MostrarPanelPass();
+            txtcontraseña.Focus();
         }
 
         private void MostrarPanelPass()
