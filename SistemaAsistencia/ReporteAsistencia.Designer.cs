@@ -74,7 +74,7 @@ namespace SistemaAsistencia
             this.textBox4.Style.BorderStyle.Default = Telerik.Reporting.Drawing.BorderType.None;
             this.textBox4.Style.BorderStyle.Top = Telerik.Reporting.Drawing.BorderType.Dashed;
             this.textBox4.StyleName = "";
-            this.textBox4.Value = "=(Fields.SueldoPorHora)*(Fields.Horas)";
+            this.textBox4.Value = "=(Sum(Fields.Horas))*(Fields.SueldoPorHora)";
             // 
             // textBox6
             // 
@@ -222,12 +222,12 @@ namespace SistemaAsistencia
             this.textBox7,
             this.textBox5,
             this.textBox18,
+            this.textBox15,
+            this.textBox17,
             this.textBox19,
             this.textBox2,
             this.textBox6,
-            this.textBox4,
-            this.textBox15,
-            this.textBox17});
+            this.textBox4});
             this.table1.Location = new Telerik.Reporting.Drawing.PointU(Telerik.Reporting.Drawing.Unit.Cm(0D), Telerik.Reporting.Drawing.Unit.Cm(0D));
             this.table1.Name = "table1";
             tableGroup7.Groupings.Add(new Telerik.Reporting.Grouping(null));
@@ -293,7 +293,7 @@ namespace SistemaAsistencia
             this.textBox7.Style.Font.Bold = true;
             this.textBox7.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.textBox7.StyleName = "";
-            this.textBox7.Value = "Valor por Hrs (C$)";
+            this.textBox7.Value = "C$ por Hrs";
             // 
             // textBox16
             // 
