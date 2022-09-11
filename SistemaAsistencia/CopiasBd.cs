@@ -23,11 +23,11 @@ namespace SistemaAsistencia
         }
         string ruta;
         string txtsoftware = "Asistencia";
-        string Base_De_datos = "ASISTENCIA";
+        string Base_De_datos = "Asistencia";
         private Thread Hilo;
         private bool acaba = false;
 
-        private void mostrarRuta()
+        public void mostrarRuta()
         {
             DcopiasBd funcion = new DcopiasBd();
             funcion.MostrarRuta(ref ruta);
