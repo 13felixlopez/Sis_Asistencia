@@ -16,7 +16,7 @@ namespace SistemaAsistencia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Login frm = new Login();
+            TomarAsistencia frm = new TomarAsistencia();
             frm.FormClosed += Frm_FormClosed;
             frm.ShowDialog();
             Application.Run();

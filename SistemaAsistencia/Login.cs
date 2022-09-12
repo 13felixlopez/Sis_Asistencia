@@ -39,7 +39,7 @@ namespace SistemaAsistencia
             if (Indicador=="Correcto")
             {
                 MostrarUsuarios();
-                if (Contador==0)
+                if (Contador == 0)
                 {
                     Dispose();
                     UsuarioPrincipal frm = new UsuarioPrincipal();
@@ -234,6 +234,13 @@ namespace SistemaAsistencia
 
                 txtcontraseña.Text = txtcontraseña.Text.Substring(0, txtcontraseña.Text.Count() - 1);
             }
+        }
+
+        private void btncambioUsuario_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            Login lg = new Login();
+            lg.ShowDialog();
         }
     }
 }

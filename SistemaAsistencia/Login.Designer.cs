@@ -111,6 +111,7 @@ namespace SistemaAsistencia
             this.btncambioUsuario.TabIndex = 622;
             this.btncambioUsuario.Text = "Cambiar de Usuario";
             this.btncambioUsuario.UseVisualStyleBackColor = false;
+            this.btncambioUsuario.Click += new System.EventHandler(this.btncambioUsuario_Click);
             // 
             // btn_insertar
             // 

@@ -44,11 +44,8 @@ namespace SistemaAsistencia
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtcontraseña = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtusuario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtnombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Label11 = new System.Windows.Forms.Label();
@@ -66,6 +63,7 @@ namespace SistemaAsistencia
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelRegistro = new System.Windows.Forms.Panel();
+            this.lblanuncioIcono = new System.Windows.Forms.Label();
             this.panelIcono = new System.Windows.Forms.Panel();
             this.btnVolverIcono = new System.Windows.Forms.Button();
             this.AgregarIconoPC = new System.Windows.Forms.PictureBox();
@@ -75,7 +73,9 @@ namespace SistemaAsistencia
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.Icono = new System.Windows.Forms.PictureBox();
-            this.lblanuncioIcono = new System.Windows.Forms.Label();
+            this.txtnombre = new System.Windows.Forms.TextBox();
+            this.txtcontraseña = new System.Windows.Forms.TextBox();
+            this.txtusuario = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -288,15 +288,6 @@ namespace SistemaAsistencia
             this.label7.TabIndex = 7;
             this.label7.Text = "Se permite hasta \r\n6 numeros";
             // 
-            // txtcontraseña
-            // 
-            this.txtcontraseña.Location = new System.Drawing.Point(156, 98);
-            this.txtcontraseña.MaxLength = 6;
-            this.txtcontraseña.Name = "txtcontraseña";
-            this.txtcontraseña.Size = new System.Drawing.Size(134, 26);
-            this.txtcontraseña.TabIndex = 6;
-            this.txtcontraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcontraseña_KeyPress);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -306,13 +297,6 @@ namespace SistemaAsistencia
             this.label4.TabIndex = 5;
             this.label4.Text = "Contraseña:";
             // 
-            // txtusuario
-            // 
-            this.txtusuario.Location = new System.Drawing.Point(156, 57);
-            this.txtusuario.Name = "txtusuario";
-            this.txtusuario.Size = new System.Drawing.Size(188, 26);
-            this.txtusuario.TabIndex = 4;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -321,13 +305,6 @@ namespace SistemaAsistencia
             this.label3.Size = new System.Drawing.Size(68, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "Usuario:";
-            // 
-            // txtnombre
-            // 
-            this.txtnombre.Location = new System.Drawing.Point(156, 21);
-            this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(276, 26);
-            this.txtnombre.TabIndex = 2;
             // 
             // label2
             // 
@@ -501,6 +478,9 @@ namespace SistemaAsistencia
             // panelRegistro
             // 
             this.panelRegistro.BackColor = System.Drawing.Color.White;
+            this.panelRegistro.Controls.Add(this.txtusuario);
+            this.panelRegistro.Controls.Add(this.txtcontraseña);
+            this.panelRegistro.Controls.Add(this.txtnombre);
             this.panelRegistro.Controls.Add(this.lblanuncioIcono);
             this.panelRegistro.Controls.Add(this.panelIcono);
             this.panelRegistro.Controls.Add(this.Icono);
@@ -509,11 +489,8 @@ namespace SistemaAsistencia
             this.panelRegistro.Controls.Add(this.Label12);
             this.panelRegistro.Controls.Add(this.Label11);
             this.panelRegistro.Controls.Add(this.label7);
-            this.panelRegistro.Controls.Add(this.txtcontraseña);
             this.panelRegistro.Controls.Add(this.label4);
-            this.panelRegistro.Controls.Add(this.txtusuario);
             this.panelRegistro.Controls.Add(this.label3);
-            this.panelRegistro.Controls.Add(this.txtnombre);
             this.panelRegistro.Controls.Add(this.label2);
             this.panelRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelRegistro.Location = new System.Drawing.Point(43, 95);
@@ -521,6 +498,18 @@ namespace SistemaAsistencia
             this.panelRegistro.Size = new System.Drawing.Size(982, 627);
             this.panelRegistro.TabIndex = 6;
             this.panelRegistro.Visible = false;
+            // 
+            // lblanuncioIcono
+            // 
+            this.lblanuncioIcono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblanuncioIcono.ForeColor = System.Drawing.Color.White;
+            this.lblanuncioIcono.Location = new System.Drawing.Point(463, 19);
+            this.lblanuncioIcono.Name = "lblanuncioIcono";
+            this.lblanuncioIcono.Size = new System.Drawing.Size(136, 121);
+            this.lblanuncioIcono.TabIndex = 617;
+            this.lblanuncioIcono.Text = "Elije un Icono";
+            this.lblanuncioIcono.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblanuncioIcono.Click += new System.EventHandler(this.lblanuncioIcono_Click);
             // 
             // panelIcono
             // 
@@ -633,17 +622,26 @@ namespace SistemaAsistencia
             this.Icono.TabStop = false;
             this.Icono.Click += new System.EventHandler(this.Icono_Click);
             // 
-            // lblanuncioIcono
+            // txtnombre
             // 
-            this.lblanuncioIcono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblanuncioIcono.ForeColor = System.Drawing.Color.White;
-            this.lblanuncioIcono.Location = new System.Drawing.Point(463, 19);
-            this.lblanuncioIcono.Name = "lblanuncioIcono";
-            this.lblanuncioIcono.Size = new System.Drawing.Size(136, 121);
-            this.lblanuncioIcono.TabIndex = 617;
-            this.lblanuncioIcono.Text = "Elije un Icono";
-            this.lblanuncioIcono.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblanuncioIcono.Click += new System.EventHandler(this.lblanuncioIcono_Click);
+            this.txtnombre.Location = new System.Drawing.Point(157, 23);
+            this.txtnombre.Name = "txtnombre";
+            this.txtnombre.Size = new System.Drawing.Size(242, 26);
+            this.txtnombre.TabIndex = 619;
+            // 
+            // txtcontraseña
+            // 
+            this.txtcontraseña.Location = new System.Drawing.Point(155, 95);
+            this.txtcontraseña.Name = "txtcontraseña";
+            this.txtcontraseña.Size = new System.Drawing.Size(135, 26);
+            this.txtcontraseña.TabIndex = 620;
+            // 
+            // txtusuario
+            // 
+            this.txtusuario.Location = new System.Drawing.Point(155, 57);
+            this.txtusuario.Name = "txtusuario";
+            this.txtusuario.Size = new System.Drawing.Size(152, 26);
+            this.txtusuario.TabIndex = 621;
             // 
             // CtlUsuarios
             // 
@@ -699,11 +697,8 @@ namespace SistemaAsistencia
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         internal System.Windows.Forms.Label Label12;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtcontraseña;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtusuario;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtnombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         internal System.Windows.Forms.Label Label11;
@@ -731,5 +726,8 @@ namespace SistemaAsistencia
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label lblanuncioIcono;
         private System.Windows.Forms.PictureBox Icono;
+        private System.Windows.Forms.TextBox txtusuario;
+        private System.Windows.Forms.TextBox txtcontraseña;
+        private System.Windows.Forms.TextBox txtnombre;
     }
 }
