@@ -11,10 +11,11 @@ using SistemaAsistencia.Datos;
 using SistemaAsistencia.Logica;
 using System.Data.SqlClient;
 using System.IO;
+using MaterialSkin;
 
 namespace SistemaAsistencia
 {
-    public partial class MenuPrincipal : Form
+    public partial class MenuPrincipal : MaterialSkin.Controls.MaterialForm
     {
         public MenuPrincipal()
         {
@@ -32,6 +33,7 @@ namespace SistemaAsistencia
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
+            SkinManager.Theme = MaterialSkinManager.Themes.DARK;
             panelBienvenida.Dock = DockStyle.Fill;
             validarPermisos();
         }
@@ -193,6 +195,11 @@ namespace SistemaAsistencia
             Dispose();
             TomarAsistencia frm = new TomarAsistencia();
             frm.ShowDialog();
+        }
+
+        private void panel23_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

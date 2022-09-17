@@ -432,9 +432,9 @@ namespace SistemaAsistencia
             // 
             this.Panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
             this.Panel12.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Panel12.Location = new System.Drawing.Point(0, 0);
+            this.Panel12.Location = new System.Drawing.Point(3, 64);
             this.Panel12.Name = "Panel12";
-            this.Panel12.Size = new System.Drawing.Size(1073, 233);
+            this.Panel12.Size = new System.Drawing.Size(1067, 233);
             this.Panel12.TabIndex = 609;
             // 
             // UsuarioPrincipal
@@ -449,6 +449,7 @@ namespace SistemaAsistencia
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UsuarioPrincipal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.UsuarioPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Icono)).EndInit();
             this.MenuStrip4.ResumeLayout(false);
             this.MenuStrip4.PerformLayout();

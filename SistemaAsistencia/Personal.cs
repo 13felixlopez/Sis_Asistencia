@@ -1,19 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using SistemaAsistencia.Datos;
 using SistemaAsistencia.Logica;
-using SistemaAsistencia.Datos;
+using System;
+using System.Data;
+using System.Drawing;
+using System.Windows.Forms;
 namespace SistemaAsistencia
 {
     public partial class Personal : UserControl

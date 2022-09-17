@@ -32,19 +32,19 @@ namespace SistemaAsistencia
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EleccionServidor));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Label66 = new System.Windows.Forms.Label();
+            this.PictureBox7 = new System.Windows.Forms.PictureBox();
             this.Panel4 = new System.Windows.Forms.Panel();
             this.Label4 = new System.Windows.Forms.Label();
             this.BtnRemoto = new System.Windows.Forms.Button();
             this.BtnPrincipal = new System.Windows.Forms.Button();
             this.Label9 = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();
-            this.PictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.PictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox7)).BeginInit();
+            this.Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,9 +53,9 @@ namespace SistemaAsistencia
             this.panel1.Controls.Add(this.Label66);
             this.panel1.Controls.Add(this.PictureBox7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(3, 64);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1201, 90);
+            this.panel1.Size = new System.Drawing.Size(1195, 90);
             this.panel1.TabIndex = 622;
             // 
             // Label66
@@ -69,6 +69,16 @@ namespace SistemaAsistencia
             this.Label66.Size = new System.Drawing.Size(112, 25);
             this.Label66.TabIndex = 616;
             this.Label66.Text = "Asistencia";
+            // 
+            // PictureBox7
+            // 
+            this.PictureBox7.Image = global::SistemaAsistencia.Properties.Resources.Logo_removebg_preview;
+            this.PictureBox7.Location = new System.Drawing.Point(110, 8);
+            this.PictureBox7.Name = "PictureBox7";
+            this.PictureBox7.Size = new System.Drawing.Size(149, 75);
+            this.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBox7.TabIndex = 615;
+            this.PictureBox7.TabStop = false;
             // 
             // Panel4
             // 
@@ -153,16 +163,6 @@ namespace SistemaAsistencia
             this.Label1.TabIndex = 605;
             this.Label1.Text = "¿Esta Computadora es?";
             // 
-            // PictureBox7
-            // 
-            this.PictureBox7.Image = global::SistemaAsistencia.Properties.Resources.Logo_removebg_preview;
-            this.PictureBox7.Location = new System.Drawing.Point(110, 8);
-            this.PictureBox7.Name = "PictureBox7";
-            this.PictureBox7.Size = new System.Drawing.Size(149, 75);
-            this.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PictureBox7.TabIndex = 615;
-            this.PictureBox7.TabStop = false;
-            // 
             // panel2
             // 
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
@@ -201,11 +201,12 @@ namespace SistemaAsistencia
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EleccionServidor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.EleccionServidor_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBox7)).EndInit();
             this.Panel4.ResumeLayout(false);
             this.Panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             this.ResumeLayout(false);
 

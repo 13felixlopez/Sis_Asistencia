@@ -380,7 +380,7 @@ namespace SistemaAsistencia
             this.PanelIngreso_de_contraseña.Controls.Add(this.btnborrartodo);
             this.PanelIngreso_de_contraseña.Controls.Add(this.flowLayoutPanel2);
             this.PanelIngreso_de_contraseña.Controls.Add(this.Label3);
-            this.PanelIngreso_de_contraseña.Location = new System.Drawing.Point(110, 134);
+            this.PanelIngreso_de_contraseña.Location = new System.Drawing.Point(108, 166);
             this.PanelIngreso_de_contraseña.Name = "PanelIngreso_de_contraseña";
             this.PanelIngreso_de_contraseña.Size = new System.Drawing.Size(397, 570);
             this.PanelIngreso_de_contraseña.TabIndex = 623;
@@ -479,16 +479,16 @@ namespace SistemaAsistencia
             this.panel1.Controls.Add(this.Label66);
             this.panel1.Controls.Add(this.PictureBox7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(3, 64);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1053, 90);
+            this.panel1.Size = new System.Drawing.Size(1047, 90);
             this.panel1.TabIndex = 622;
             // 
             // Icono
             // 
-            this.Icono.Location = new System.Drawing.Point(489, 28);
+            this.Icono.Location = new System.Drawing.Point(265, 12);
             this.Icono.Name = "Icono";
-            this.Icono.Size = new System.Drawing.Size(30, 29);
+            this.Icono.Size = new System.Drawing.Size(72, 65);
             this.Icono.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Icono.TabIndex = 617;
             this.Icono.TabStop = false;

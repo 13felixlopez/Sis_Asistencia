@@ -55,6 +55,23 @@ namespace SistemaAsistencia.Datos
 				Conexion.cerrar();
 			}
 		}
+		public void mostrar_Usuarios_Activo(ref DataTable dt)
+		{
+			try
+			{
+				Conexion.abrir();
+				SqlDataAdapter da = new SqlDataAdapter("Select * from Usuarios Where Estado='ACTIVO'", Conexion.conectar);
+				da.Fill(dt);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.StackTrace);
+			}
+			finally
+			{
+				Conexion.cerrar();
+			}
+		}
 		public void ObtenerIdUsuario(ref int Idusuario, string Login)
 		{
 			try

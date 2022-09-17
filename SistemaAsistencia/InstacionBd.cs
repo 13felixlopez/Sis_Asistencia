@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using SistemaAsistencia.Logica;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Data;
-using System.Xml;
-using SistemaAsistencia.Logica;
-using System.IO;
 using System.Diagnostics;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
+using System.Xml;
 
 namespace SistemaAsistencia
 {
-    public partial class InstacionBd : Form
+    public partial class InstacionBd : MaterialSkin.Controls.MaterialForm
     {
         public InstacionBd()
         {
@@ -33,6 +28,7 @@ namespace SistemaAsistencia
 
         private void InstacionBd_Load(object sender, EventArgs e)
         {
+            SkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.DARK;
             centrarPaneles();
             Reemplazar();
             comprobar_si_ya_hay_servidor_instalado();

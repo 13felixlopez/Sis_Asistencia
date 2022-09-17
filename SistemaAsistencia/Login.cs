@@ -13,13 +13,14 @@ using SistemaAsistencia.Logica;
 
 namespace SistemaAsistencia
 {
-    public partial class Login : Form
+    public partial class Login : MaterialSkin.Controls.MaterialForm
     {
         public Login()
         {
             InitializeComponent();
         }
         string Usuario;
+        string User;
         int Idusuario;
         int Contador;
         string Indicador;
@@ -31,6 +32,7 @@ namespace SistemaAsistencia
         private void Login_Load(object sender, EventArgs e)
         {
             validar_conexion();
+            SkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.DARK;
         }
 
         private void validar_conexion()
@@ -67,7 +69,7 @@ namespace SistemaAsistencia
                 PanelUsuarios.BringToFront();
                 DataTable dt = new DataTable();
                 Dusuarios funcion = new Dusuarios();
-                funcion.mostrar_Usuarios(ref dt);
+                funcion.mostrar_Usuarios_Activo(ref dt);
                 foreach (DataRow rdr in dt.Rows)
                 {
                     Label b = new Label();
@@ -138,7 +140,7 @@ namespace SistemaAsistencia
         {
             DataTable dt = new DataTable();
             Dusuarios funcion = new Dusuarios();
-            funcion.mostrar_Usuarios(ref dt);
+            funcion.mostrar_Usuarios_Activo(ref dt);
             Contador = dt.Rows.Count;
         }
 

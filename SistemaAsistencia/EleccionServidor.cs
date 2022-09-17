@@ -30,5 +30,10 @@ namespace SistemaAsistencia
             ConexionRemota frm = new ConexionRemota();
             frm.ShowDialog();
         }
+
+        private void EleccionServidor_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

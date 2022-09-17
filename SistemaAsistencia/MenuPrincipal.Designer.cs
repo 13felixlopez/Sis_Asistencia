@@ -64,6 +64,7 @@
             this.btnRestaurar = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
             this.dlg = new System.Windows.Forms.OpenFileDialog();
+            this.panel23 = new System.Windows.Forms.Panel();
             this.panel5.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -181,7 +182,7 @@
             this.btnConsultas.ForeColor = System.Drawing.Color.White;
             this.btnConsultas.Location = new System.Drawing.Point(0, 54);
             this.btnConsultas.Name = "btnConsultas";
-            this.btnConsultas.Size = new System.Drawing.Size(165, 56);
+            this.btnConsultas.Size = new System.Drawing.Size(165, 67);
             this.btnConsultas.TabIndex = 1;
             this.btnConsultas.Text = "Pre planilla";
             this.btnConsultas.UseVisualStyleBackColor = false;
@@ -191,6 +192,7 @@
             // 
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.Icono);
+            this.panel3.Controls.Add(this.panel23);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
@@ -202,9 +204,9 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(60, 0);
+            this.label2.Location = new System.Drawing.Point(60, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 54);
+            this.label2.Size = new System.Drawing.Size(105, 44);
             this.label2.TabIndex = 3;
             this.label2.Text = "Asistencia";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -213,9 +215,9 @@
             // 
             this.Icono.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.Icono.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Icono.Location = new System.Drawing.Point(0, 0);
+            this.Icono.Location = new System.Drawing.Point(0, 10);
             this.Icono.Name = "Icono";
-            this.Icono.Size = new System.Drawing.Size(60, 54);
+            this.Icono.Size = new System.Drawing.Size(60, 44);
             this.Icono.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Icono.TabIndex = 0;
             this.Icono.TabStop = false;
@@ -225,9 +227,9 @@
             this.PanelPadre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.PanelPadre.Controls.Add(this.panelBienvenida);
             this.PanelPadre.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelPadre.Location = new System.Drawing.Point(165, 0);
+            this.PanelPadre.Location = new System.Drawing.Point(168, 64);
             this.PanelPadre.Name = "PanelPadre";
-            this.PanelPadre.Size = new System.Drawing.Size(835, 749);
+            this.PanelPadre.Size = new System.Drawing.Size(829, 682);
             this.PanelPadre.TabIndex = 3;
             this.PanelPadre.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelPadre_Paint);
             // 
@@ -259,9 +261,9 @@
             this.btnPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPersonal.ForeColor = System.Drawing.Color.White;
-            this.btnPersonal.Location = new System.Drawing.Point(0, 110);
+            this.btnPersonal.Location = new System.Drawing.Point(0, 121);
             this.btnPersonal.Name = "btnPersonal";
-            this.btnPersonal.Size = new System.Drawing.Size(165, 62);
+            this.btnPersonal.Size = new System.Drawing.Size(165, 70);
             this.btnPersonal.TabIndex = 2;
             this.btnPersonal.Text = "Personal";
             this.btnPersonal.UseVisualStyleBackColor = false;
@@ -283,9 +285,9 @@
             this.panel1.Controls.Add(this.btnConsultas);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(3, 64);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(165, 749);
+            this.panel1.Size = new System.Drawing.Size(165, 682);
             this.panel1.TabIndex = 2;
             // 
             // panel4
@@ -297,9 +299,9 @@
             this.panel4.Controls.Add(this.panel8);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 218);
+            this.panel4.Location = new System.Drawing.Point(0, 214);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(165, 531);
+            this.panel4.Size = new System.Drawing.Size(165, 468);
             this.panel4.TabIndex = 3;
             // 
             // panel18
@@ -483,6 +485,14 @@
             // 
             this.dlg.FileName = "openFileDialog1";
             // 
+            // panel23
+            // 
+            this.panel23.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel23.Location = new System.Drawing.Point(0, 0);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(165, 10);
+            this.panel23.TabIndex = 4;
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -549,6 +559,7 @@
         private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.OpenFileDialog dlg;
+        private System.Windows.Forms.Panel panel23;
     }
 }
 

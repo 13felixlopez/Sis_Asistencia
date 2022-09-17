@@ -47,7 +47,6 @@ namespace SistemaAsistencia
             this.Label7 = new System.Windows.Forms.Label();
             this.Label5 = new System.Windows.Forms.Label();
             this.panelObservacion = new System.Windows.Forms.Panel();
-            this.btnConfirmar = new System.Windows.Forms.Button();
             this.txtObservacion = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.Label();
@@ -55,7 +54,6 @@ namespace SistemaAsistencia
             this.Label6 = new System.Windows.Forms.Label();
             this.Label8 = new System.Windows.Forms.Label();
             this.Panel9 = new System.Windows.Forms.Panel();
-            this.BtnIniciarSesion = new System.Windows.Forms.Button();
             this.Panel13 = new System.Windows.Forms.Panel();
             this.Panel12 = new System.Windows.Forms.Panel();
             this.Label66 = new System.Windows.Forms.Label();
@@ -65,8 +63,11 @@ namespace SistemaAsistencia
             this.Panel2 = new System.Windows.Forms.Panel();
             this.TXTIDPERSONAL = new System.Windows.Forms.Label();
             this.Panel6 = new System.Windows.Forms.Panel();
+            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.btnGrabar = new System.Windows.Forms.Button();
             this.PictureBox4 = new System.Windows.Forms.PictureBox();
             this.PictureBox2 = new System.Windows.Forms.PictureBox();
+            this.BtnIniciarSesion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadohoras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoacumuladohorASDIA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadohorastotales)).BeginInit();
@@ -228,10 +229,10 @@ namespace SistemaAsistencia
             this.txtIdentificacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.txtIdentificacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIdentificacion.ForeColor = System.Drawing.Color.White;
-            this.txtIdentificacion.Location = new System.Drawing.Point(177, 296);
+            this.txtIdentificacion.Location = new System.Drawing.Point(177, 290);
             this.txtIdentificacion.MaxLength = 8;
             this.txtIdentificacion.Name = "txtIdentificacion";
-            this.txtIdentificacion.Size = new System.Drawing.Size(328, 28);
+            this.txtIdentificacion.Size = new System.Drawing.Size(297, 28);
             this.txtIdentificacion.TabIndex = 463;
             this.txtIdentificacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtIdentificacion.TextChanged += new System.EventHandler(this.txtIdentificacion_TextChanged);
@@ -296,26 +297,6 @@ namespace SistemaAsistencia
             this.panelObservacion.Size = new System.Drawing.Size(259, 393);
             this.panelObservacion.TabIndex = 618;
             this.panelObservacion.Visible = false;
-            // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.BackColor = System.Drawing.Color.Transparent;
-            this.btnConfirmar.BackgroundImage = global::SistemaAsistencia.Properties.Resources.azul;
-            this.btnConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirmar.FlatAppearance.BorderSize = 0;
-            this.btnConfirmar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnConfirmar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmar.ForeColor = System.Drawing.Color.White;
-            this.btnConfirmar.Location = new System.Drawing.Point(5, 236);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(138, 45);
-            this.btnConfirmar.TabIndex = 611;
-            this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.UseVisualStyleBackColor = false;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // txtObservacion
             // 
@@ -393,26 +374,6 @@ namespace SistemaAsistencia
             this.Panel9.Size = new System.Drawing.Size(189, 50);
             this.Panel9.TabIndex = 611;
             // 
-            // BtnIniciarSesion
-            // 
-            this.BtnIniciarSesion.BackColor = System.Drawing.Color.Transparent;
-            this.BtnIniciarSesion.BackgroundImage = global::SistemaAsistencia.Properties.Resources.naranja;
-            this.BtnIniciarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnIniciarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnIniciarSesion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnIniciarSesion.FlatAppearance.BorderSize = 0;
-            this.BtnIniciarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.BtnIniciarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.BtnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnIniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnIniciarSesion.Location = new System.Drawing.Point(0, 5);
-            this.BtnIniciarSesion.Name = "BtnIniciarSesion";
-            this.BtnIniciarSesion.Size = new System.Drawing.Size(184, 45);
-            this.BtnIniciarSesion.TabIndex = 610;
-            this.BtnIniciarSesion.Text = "Iniciar Sesion";
-            this.BtnIniciarSesion.UseVisualStyleBackColor = false;
-            this.BtnIniciarSesion.Click += new System.EventHandler(this.BtnIniciarSesion_Click);
-            // 
             // Panel13
             // 
             this.Panel13.Dock = System.Windows.Forms.DockStyle.Right;
@@ -464,6 +425,7 @@ namespace SistemaAsistencia
             // 
             // Panel1
             // 
+            this.Panel1.Controls.Add(this.btnGrabar);
             this.Panel1.Controls.Add(this.Panel3);
             this.Panel1.Controls.Add(this.Panel2);
             this.Panel1.Controls.Add(this.txtIdentificacion);
@@ -486,9 +448,9 @@ namespace SistemaAsistencia
             // Panel3
             // 
             this.Panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(171)))), ((int)(((byte)(55)))));
-            this.Panel3.Location = new System.Drawing.Point(177, 327);
+            this.Panel3.Location = new System.Drawing.Point(177, 318);
             this.Panel3.Name = "Panel3";
-            this.Panel3.Size = new System.Drawing.Size(328, 1);
+            this.Panel3.Size = new System.Drawing.Size(301, 1);
             this.Panel3.TabIndex = 464;
             // 
             // Panel2
@@ -527,6 +489,46 @@ namespace SistemaAsistencia
             this.Panel6.Size = new System.Drawing.Size(1340, 50);
             this.Panel6.TabIndex = 616;
             // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfirmar.BackgroundImage = global::SistemaAsistencia.Properties.Resources.azul;
+            this.btnConfirmar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirmar.FlatAppearance.BorderSize = 0;
+            this.btnConfirmar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnConfirmar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmar.ForeColor = System.Drawing.Color.White;
+            this.btnConfirmar.Location = new System.Drawing.Point(5, 236);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(138, 45);
+            this.btnConfirmar.TabIndex = 611;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
+            // btnGrabar
+            // 
+            this.btnGrabar.BackColor = System.Drawing.Color.Transparent;
+            this.btnGrabar.BackgroundImage = global::SistemaAsistencia.Properties.Resources.naranja;
+            this.btnGrabar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGrabar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGrabar.FlatAppearance.BorderSize = 0;
+            this.btnGrabar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnGrabar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnGrabar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGrabar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrabar.ForeColor = System.Drawing.Color.White;
+            this.btnGrabar.Location = new System.Drawing.Point(495, 290);
+            this.btnGrabar.Name = "btnGrabar";
+            this.btnGrabar.Size = new System.Drawing.Size(101, 42);
+            this.btnGrabar.TabIndex = 612;
+            this.btnGrabar.Text = "Grabar";
+            this.btnGrabar.UseVisualStyleBackColor = false;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            // 
             // PictureBox4
             // 
             this.PictureBox4.Location = new System.Drawing.Point(612, 544);
@@ -543,9 +545,29 @@ namespace SistemaAsistencia
             this.PictureBox2.Location = new System.Drawing.Point(0, 0);
             this.PictureBox2.Name = "PictureBox2";
             this.PictureBox2.Size = new System.Drawing.Size(599, 228);
-            this.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBox2.TabIndex = 459;
             this.PictureBox2.TabStop = false;
+            // 
+            // BtnIniciarSesion
+            // 
+            this.BtnIniciarSesion.BackColor = System.Drawing.Color.Transparent;
+            this.BtnIniciarSesion.BackgroundImage = global::SistemaAsistencia.Properties.Resources.naranja;
+            this.BtnIniciarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnIniciarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnIniciarSesion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnIniciarSesion.FlatAppearance.BorderSize = 0;
+            this.BtnIniciarSesion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.BtnIniciarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.BtnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnIniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnIniciarSesion.Location = new System.Drawing.Point(0, 5);
+            this.BtnIniciarSesion.Name = "BtnIniciarSesion";
+            this.BtnIniciarSesion.Size = new System.Drawing.Size(184, 45);
+            this.BtnIniciarSesion.TabIndex = 610;
+            this.BtnIniciarSesion.Text = "Iniciar Sesion";
+            this.BtnIniciarSesion.UseVisualStyleBackColor = false;
+            this.BtnIniciarSesion.Click += new System.EventHandler(this.BtnIniciarSesion_Click);
             // 
             // TomarAsistencia
             // 
@@ -558,6 +580,7 @@ namespace SistemaAsistencia
             this.Controls.Add(this.Panel6);
             this.Name = "TomarAsistencia";
             this.Text = "TomarAsistencia";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.datalistadohoras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoacumuladohorASDIA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadohorastotales)).EndInit();
@@ -615,5 +638,6 @@ namespace SistemaAsistencia
         internal System.Windows.Forms.Panel Panel2;
         internal System.Windows.Forms.Label TXTIDPERSONAL;
         internal System.Windows.Forms.Panel Panel6;
+        internal System.Windows.Forms.Button btnGrabar;
     }
 }

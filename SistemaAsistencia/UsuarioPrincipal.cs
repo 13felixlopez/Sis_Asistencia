@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using SistemaAsistencia.Datos;
+﻿using SistemaAsistencia.Datos;
 using SistemaAsistencia.Logica;
+using System;
+using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Windows.Forms;
 
 namespace SistemaAsistencia
 {
-    public partial class UsuarioPrincipal : Form
+    public partial class UsuarioPrincipal : MaterialSkin.Controls.MaterialForm
     {
         public UsuarioPrincipal()
         {
@@ -110,6 +104,11 @@ namespace SistemaAsistencia
         {
             Dusuarios funcion = new Dusuarios();
             funcion.ObtenerIdUsuario(ref idusuario, TXTUSUARIO.Text);
+        }
+
+        private void UsuarioPrincipal_Load(object sender, EventArgs e)
+        {
+            SkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.DARK;
         }
     }
 }

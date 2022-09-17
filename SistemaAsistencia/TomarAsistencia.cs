@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using SistemaAsistencia.Datos;
+using SistemaAsistencia.Logica;
+using System;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using SistemaAsistencia.Logica;
-using SistemaAsistencia.Datos;
 
 namespace SistemaAsistencia
 {
@@ -32,31 +27,7 @@ namespace SistemaAsistencia
         private void txtIdentificacion_TextChanged(object sender, EventArgs e)
         {
             BuscarPersonalIdent();
-            if (Identificacion==txtIdentificacion.Text)
-            {
-                buscarAsistenciasId();
-                if (Contador == 0)
-                {
-                    DialogResult resultado = MessageBox.Show("¿Agregar una Observacion?", "Observaciones", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                    if (resultado == DialogResult.OK)
-                    {
-                        panelObservacion.Visible = true;
-                        panelObservacion.Location = new Point(Panel1.Location.X, Panel1.Location.Y);
-                        panelObservacion.Size = new Size(Panel1.Width, Panel1.Height);
-                        panelObservacion.BringToFront();
-                        txtObservacion.Clear();
-                        txtObservacion.Focus();
-                    }
-                    else
-                    {
-                        InsertarAsistencias();
-                    }
-                }
-                else
-                {
-                    ConfirmarSalida();
-                }
-            }
+            
             
         }
 
@@ -132,6 +103,40 @@ namespace SistemaAsistencia
             Dispose();
             Login frm = new Login();
             frm.ShowDialog();
+        }
+
+        private void btnGrabar_Click(object sender, EventArgs e)
+        {
+            if (txtIdentificacion.Text=="")
+            {
+                DialogResult resultado = MessageBox.Show("Debe agregar una identificacion", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtIdentificacion.Focus();
+            }
+            else if (Identificacion == txtIdentificacion.Text)
+            {
+                buscarAsistenciasId();
+                if (Contador == 0)
+                {
+                    DialogResult resultado = MessageBox.Show("¿Agregar una Observacion?", "Observaciones", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (resultado == DialogResult.OK)
+                    {
+                        panelObservacion.Visible = true;
+                        panelObservacion.Location = new Point(Panel1.Location.X, Panel1.Location.Y);
+                        panelObservacion.Size = new Size(Panel1.Width, Panel1.Height);
+                        panelObservacion.BringToFront();
+                        txtObservacion.Clear();
+                        txtObservacion.Focus();
+                    }
+                    else
+                    {
+                        InsertarAsistencias();
+                    }
+                }
+                else
+                {
+                    ConfirmarSalida();
+                }
+            }
         }
     }
 }

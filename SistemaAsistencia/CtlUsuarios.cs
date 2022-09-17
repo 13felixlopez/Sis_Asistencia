@@ -384,8 +384,6 @@ namespace SistemaAsistencia
         {
             Idusuario = Convert.ToInt32(datalistadoUsuarios.SelectedCells[2].Value);
             login = datalistadoUsuarios.SelectedCells[4].Value.ToString();
-
-
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
