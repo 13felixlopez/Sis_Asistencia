@@ -8,6 +8,11 @@ namespace SistemaAsistencia.Datos
 {
     public class Dasistencias
     {
+        /// <summary>
+        /// Metodo que se utiliza para buscar al personal por medio del Id
+        /// </summary>
+        /// <param name="dt">Es la referencia al datatable que se genera con los datos que se piden</param>
+        /// <param name="Idpersonal">Es el dato que se esta consultando</param>
         public void buscarAsistenciasId(ref DataTable dt, int Idpersonal)
         {
             try
@@ -27,7 +32,11 @@ namespace SistemaAsistencia.Datos
                 Conexion.cerrar();
             }
         }
-
+        /// <summary>
+        /// Se valida el estado del personal si esta entrando o saliendo para asi registrarlo en la base de datos
+        /// </summary>
+        /// <param name="parametros"></param>
+        /// <returns></returns>
         public bool InsertarAsistencias(Lasistencias parametros)
         {
             try
@@ -54,6 +63,12 @@ namespace SistemaAsistencia.Datos
                 Conexion.abrir();
             }
         }
+
+        /// <summary>
+        /// Se guarda la fecha y hora de su salida y cambia el estado de entrada a salida
+        /// </summary>
+        /// <param name="parametros"></param>
+        /// <returns></returns>
         public bool ConfirmarSalida(Lasistencias parametros)
         {
             try
