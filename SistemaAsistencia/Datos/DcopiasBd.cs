@@ -10,8 +10,15 @@ using SistemaAsistencia.Logica;
 
 namespace SistemaAsistencia.Datos
 {
+	/// <summary>
+	/// Clase que se encarga de generar un archivo .bak (una copia de seguridad)
+	/// </summary>
 	public class DcopiasBd
 	{
+		/// <summary>
+		/// Se consulta el procedimiento almacenado para insertar la copia de seguridad, este se encarga de guardar la ruta donde se almacena el backup
+		/// </summary>
+		/// <returns></returns>
 		public bool InsertarCopiasBd()
 		{
 			try
@@ -32,6 +39,10 @@ namespace SistemaAsistencia.Datos
 				Conexion.cerrar();
 			}
 		}
+		/// <summary>
+		/// Muestra en un textbox la ruta donde se alamcenara el backup
+		/// </summary>
+		/// <param name="ruta"></param>
 		public void MostrarRuta(ref string ruta)
 		{
 			try
@@ -46,6 +57,11 @@ namespace SistemaAsistencia.Datos
 				MessageBox.Show(ex.StackTrace);
 			}
 		}
+		/// <summary>
+		/// Edita la ruta en la que se alamcena el backup ya que cada respaldo lo hace en una carpeta diferente
+		/// </summary>
+		/// <param name="parametros"></param>
+		/// <returns></returns>
 		public bool EditarCopiasBd(LCopiasBd parametros)
 		{
 			try

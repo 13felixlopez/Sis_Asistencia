@@ -3,12 +3,16 @@ using SistemaAsistencia.Logica;
 using System;
 using System.Data;
 using System.Drawing;
+using System.IO;
+using System.Web;
 using System.Windows.Forms;
 
 namespace SistemaAsistencia
 {
     public partial class TomarAsistencia : Form
     {
+        //string path = HttpContext.Current.Request.MapPath("~");
+        //Log lg = new Log(path);
         public TomarAsistencia()
         {
             InitializeComponent();
@@ -47,6 +51,7 @@ namespace SistemaAsistencia
             parametros.Observacion = txtObservacion.Text;
             if (funcion.InsertarAsistencias(parametros)==true)
             {
+                //lg.Add("ENTRADA REGISTRADA, ID="+Identificacion);
                 txtaviso.Text = "ENTRADA REGISTRADA";
                 txtIdentificacion.Clear();
                 txtIdentificacion.Focus();
@@ -104,7 +109,8 @@ namespace SistemaAsistencia
             Login frm = new Login();
             frm.ShowDialog();
         }
-
+        
+        
         private void btnGrabar_Click(object sender, EventArgs e)
         {
             if (txtIdentificacion.Text=="")

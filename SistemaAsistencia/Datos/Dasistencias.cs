@@ -92,6 +92,14 @@ namespace SistemaAsistencia.Datos
                 Conexion.cerrar();
             }
         }
+        /// <summary>
+        /// Se consulta el metodo almacenado el cual contiene los calculos de las entradas y salidas por personal
+        /// Esto lo muestra a traves de una tabla con los datos requeridos
+        /// </summary>
+        /// <param name="dt">Instancia a la tabla qeu se genera con el procedimiento almacenado</param>
+        /// <param name="desde">Variable que guarda la hora de entrada del personal</param>
+        /// <param name="hasta">Variable que guarda la salida del personal</param>
+        /// <param name="semana">Calculo de la semana qn la cual se esta haciendo la consulta</param>
         public void mostrar_asistencias_diarias(ref DataTable dt, DateTime desde, DateTime hasta,int semana)
         {
             try

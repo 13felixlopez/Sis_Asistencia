@@ -10,8 +10,16 @@ using System.Windows.Forms;
 
 namespace SistemaAsistencia.Datos
 {
+	/// <summary>
+	/// CRUD del personal para control de entradas y salidas, y calculo de horas 
+	/// </summary>
     public class Dpersonal
     {
+		/// <summary>
+		/// Se recogen los datos necesarios para agregar un nuevo personal y se le asigna un cargo
+		/// </summary>
+		/// <param name="parametros"></param>
+		/// <returns></returns>
 		public bool InsertarPersonal(Lpersonal parametros)
 		{
 			try

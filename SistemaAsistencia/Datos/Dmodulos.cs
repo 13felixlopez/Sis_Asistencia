@@ -6,8 +6,15 @@ using System.Windows.Forms;
 
 namespace SistemaAsistencia.Datos
 {
+    /// <summary>
+    /// Otorgar y quitar permisos a los usuarios 
+    /// </summary>
     public class Dmodulos
     {
+        /// <summary>
+        /// Muestra los modulos que contiene el sistema, selecciona los modulos a los que tendra acceso un usuario
+        /// </summary>
+        /// <param name="dt"></param>
         public void mostrar_Modulos(ref DataTable dt)
         {
             try
@@ -25,7 +32,12 @@ namespace SistemaAsistencia.Datos
                 Conexion.cerrar();
             }
         }
-
+        /// <summary>
+        /// Los apartados de nuestro sistema se guardan en una tabla para que puedan ser administrados
+        /// Estos modulos se crean directamente en codigo y solo se mandan a la base de datos
+        /// </summary>
+        /// <param name="parametros"></param>
+        /// <returns></returns>
         public bool Insertar_Modulos(Lmodulos parametros)
         {
             try

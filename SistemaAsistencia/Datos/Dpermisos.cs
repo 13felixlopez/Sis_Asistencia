@@ -10,8 +10,16 @@ using System.Windows.Forms;
 
 namespace SistemaAsistencia.Datos
 {
+    /// <summary>
+    /// Ya teniendo guardado los diferentes modulos podremos administrar los accesos a los distintos usurios
+    /// </summary>
     public class Dpermisos
     {
+        /// <summary>
+        /// Se seleccionan los modulos a los que el usuario podra acceder y se guarda el id de usuario y el id del modulo que se le otorgo el permiso
+        /// </summary>
+        /// <param name="parametros"></param>
+        /// <returns></returns>
         public bool Insertar_Permisos(Lpermisos parametros)
         {
             try
@@ -34,6 +42,11 @@ namespace SistemaAsistencia.Datos
                 Conexion.cerrar();
             }
         }
+        /// <summary>
+        /// Se manda el id de usuario y se consulta los id de modulos que tiene asignado
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <param name="parametros"></param>
         public void mostrar_Permisos(ref DataTable dt,Lpermisos parametros)
         {
             try
@@ -51,6 +64,11 @@ namespace SistemaAsistencia.Datos
                 MessageBox.Show(ex.StackTrace);
             }
         }
+        /// <summary>
+        /// Se muetran los modulos que tiene el usuario y al deseleccionar se eliminara el acceso
+        /// </summary>
+        /// <param name="parametros"></param>
+        /// <returns></returns>
         public bool Eliminar_Permisos(Lpermisos parametros)
         {
             try

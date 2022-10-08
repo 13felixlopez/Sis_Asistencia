@@ -10,8 +10,16 @@ using System.Windows.Forms;
 
 namespace SistemaAsistencia.Datos
 {
+    /// <summary>
+    /// Esta clase es la cual tiene el CRUD de los cargos del personal
+    /// </summary>
     public class Dcargos
     {
+        /// <summary>
+        /// Metodo que inserta un nuevo cargo, teniendo como requisitos el nombre del cargo y el sueldo por hora
+        /// </summary>
+        /// <param name="parametros"></param>
+        /// <returns></returns>
         public bool insertar_Cargo(Lcargos parametros)
         {
             try
@@ -34,6 +42,11 @@ namespace SistemaAsistencia.Datos
                 Conexion.cerrar();
             }
         }
+        /// <summary>
+        /// Editar Cargos se hace mediante el id del cargo que se le envie a la base de datos
+        /// </summary>
+        /// <param name="parametros"></param>
+        /// <returns></returns>
         public bool editar_Cargo(Lcargos parametros)
         {
             try
@@ -57,6 +70,12 @@ namespace SistemaAsistencia.Datos
                 Conexion.cerrar();
             }
         }
+        /// <summary>
+        /// EL texto que se escriba en el textbox de busqueda se compara con los cargos almacenados en la BD y se muestra el que coincida con lo escrito,
+        /// En caso que no haya coincidencias el resultado sera un tabla vacia
+        /// </summary>
+        /// <param name="dt">Tabla resultante</param>
+        /// <param name="buscador">Variable que contiene el texto a buscar</param>
         public void buscarCargos(ref DataTable dt, string buscador)
         {
             try
