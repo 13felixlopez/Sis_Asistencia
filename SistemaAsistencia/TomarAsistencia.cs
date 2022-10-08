@@ -136,11 +136,15 @@ namespace SistemaAsistencia
                     else
                     {
                         InsertarAsistencias();
+                        CopiasBd cb = new CopiasBd();
+                        cb.ejecucion2();
                     }
                 }
                 else
                 {
                     ConfirmarSalida();
+                    CopiasBd cb = new CopiasBd();
+                    cb.ejecucion2();
                 }
             }
         }

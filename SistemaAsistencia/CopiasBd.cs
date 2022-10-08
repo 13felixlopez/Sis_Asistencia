@@ -36,7 +36,7 @@ namespace SistemaAsistencia
             GenerarCopia();
         }
 
-        private void GenerarCopia()
+        public void GenerarCopia()
         {
             if (!string.IsNullOrEmpty(txtRuta.Text))
             {
@@ -89,7 +89,6 @@ namespace SistemaAsistencia
 
             }
         }
-
         private void Label2_Click(object sender, EventArgs e)
         {
             ObtenerRuta();
@@ -97,7 +96,7 @@ namespace SistemaAsistencia
 
         private void ObtenerRuta()
         {
-            if (folderBrowserDialog1.ShowDialog()==DialogResult.OK)
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
                 txtRuta.Text = folderBrowserDialog1.SelectedPath;
             }
@@ -125,6 +124,44 @@ namespace SistemaAsistencia
             if (funcion.EditarCopiasBd(parametros)==true)
             {
                 MessageBox.Show("Copia de Base de datos Generada", "Creacion de Copia de Bd", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        public void ejecucion2()
+        {
+            string Ruta = "C:/";
+            string miCarpeta = "Copias_de_Seguridad_de_" + txtsoftware;
+            if (System.IO.Directory.Exists(Ruta + miCarpeta))
+            {
+
+            }
+            else
+            {
+                System.IO.Directory.CreateDirectory(Ruta + miCarpeta);
+            }
+            string ruta_completa = Ruta + miCarpeta;
+            string SubCarpeta = ruta_completa + @"\Respaldo_al_" + DateTime.Now.Day + "_" + (DateTime.Now.Month) + "_" + DateTime.Now.Year + "_" + DateTime.Now.Hour + "_" + DateTime.Now.Minute;
+            try
+            {
+                System.IO.Directory.CreateDirectory(System.IO.Path.Combine(ruta_completa, SubCarpeta));
+
+            }
+            catch (Exception)
+            {
+
+            }
+            try
+            {
+                string v_nombre_respaldo = Base_De_datos + ".bak";
+                Conexion.abrir();
+                SqlCommand cmd = new SqlCommand("BACKUP DATABASE " + Base_De_datos + " TO DISK = '" + SubCarpeta + @"\" + v_nombre_respaldo + "'", Conexion.conectar);
+                cmd.ExecuteNonQuery();
+                acaba = true;
+            }
+            catch (Exception ex)
+            {
+                acaba = false;
+                MessageBox.Show(ex.Message);
             }
         }
     }

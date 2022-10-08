@@ -20,6 +20,8 @@ namespace SistemaAsistencia
         public MenuPrincipal()
         {
             InitializeComponent();
+            timer1.Start();
+            timer1.Interval = 30000;
         }
         public int Idusuario;
         public string LoginV;
@@ -200,6 +202,12 @@ namespace SistemaAsistencia
         private void panel23_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            CopiasBd cb = new CopiasBd();
+            cb.ejecucion2();
         }
     }
 }

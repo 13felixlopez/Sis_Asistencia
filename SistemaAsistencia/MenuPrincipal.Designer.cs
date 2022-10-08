@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -40,6 +41,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.Icono = new System.Windows.Forms.PictureBox();
+            this.panel23 = new System.Windows.Forms.Panel();
             this.PanelPadre = new System.Windows.Forms.Panel();
             this.panelBienvenida = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -64,7 +66,7 @@
             this.btnRestaurar = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
             this.dlg = new System.Windows.Forms.OpenFileDialog();
-            this.panel23 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel5.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -221,6 +223,14 @@
             this.Icono.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Icono.TabIndex = 0;
             this.Icono.TabStop = false;
+            // 
+            // panel23
+            // 
+            this.panel23.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel23.Location = new System.Drawing.Point(0, 0);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(165, 10);
+            this.panel23.TabIndex = 4;
             // 
             // PanelPadre
             // 
@@ -485,13 +495,9 @@
             // 
             this.dlg.FileName = "openFileDialog1";
             // 
-            // panel23
+            // timer1
             // 
-            this.panel23.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel23.Location = new System.Drawing.Point(0, 0);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(165, 10);
-            this.panel23.TabIndex = 4;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // MenuPrincipal
             // 
@@ -560,6 +566,7 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.OpenFileDialog dlg;
         private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
