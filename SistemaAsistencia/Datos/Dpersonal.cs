@@ -25,6 +25,7 @@ namespace SistemaAsistencia.Datos
 			try
 			{
 				Conexion.abrir();
+				Log.WriteCon("Se abrio la conexion en insertarPersonal");
 				SqlCommand cmd = new SqlCommand("InsertarPersonal", Conexion.conectar);
 				cmd.CommandType = CommandType.StoredProcedure;
 				cmd.Parameters.AddWithValue("@Nombres", parametros.Nombres);
@@ -33,17 +34,19 @@ namespace SistemaAsistencia.Datos
 				cmd.Parameters.AddWithValue("@Id_cargo", parametros.Id_cargo);
 				cmd.Parameters.AddWithValue("@SueldoPorHora", parametros.SueldoPorHora);
 				cmd.ExecuteNonQuery();
+				Log.WritePerso("Se insertó correctamente el personal ✅✅" + parametros.Identificacion);
 				return true;
 			}
 			catch (Exception ex)
 			{
-
 				MessageBox.Show(ex.Message);
+				Log.Writeerror("Ocurrió un error al insertar el personal ❌❌" + parametros.Identificacion);
 				return false;
 			}
 			finally
 			{
 				Conexion.cerrar();
+				Log.WriteCon("Se cerró la conexion en insertarPersonal 🔐🔐");
 			}
 		}
 		/// <summary>
@@ -56,6 +59,7 @@ namespace SistemaAsistencia.Datos
 			try
 			{
 				Conexion.abrir();
+				Log.WriteCon("Se abrio la conexion en editarpersonal");
 				SqlCommand cmd = new SqlCommand("editarPersonal", Conexion.conectar);
 				cmd.CommandType = CommandType.StoredProcedure;
 				cmd.Parameters.AddWithValue("@Id_personal", parametros.Id_personal);
@@ -65,17 +69,20 @@ namespace SistemaAsistencia.Datos
 				cmd.Parameters.AddWithValue("@Id_cargo", parametros.Id_cargo);
 				cmd.Parameters.AddWithValue("@Sueldo_por_hora", parametros.SueldoPorHora);
 				cmd.ExecuteNonQuery();
+				Log.WritePerso("Se editó sastisfactoriamente el personal con id: " + parametros.Identificacion +" ✅✅");
 				return true;
 			}
 			catch (Exception ex)
 			{
 
 				MessageBox.Show(ex.Message);
+				Log.Writeerror("Ocurrió un error al editar el personal con id: " + parametros.Identificacion +" ❌❌");
 				return false;
 			}
 			finally
 			{
 				Conexion.cerrar();
+				Log.WriteCon("Se cerró la conexion en editarpersonal 🔐🔐");
 			}
 		}
 		/// <summary>
@@ -88,21 +95,24 @@ namespace SistemaAsistencia.Datos
 			try
 			{
 				Conexion.abrir();
+				Log.WriteCon("Se abrio la conexion en EliminarPersonal");
 				SqlCommand cmd = new SqlCommand("eliminarPersonal", Conexion.conectar);
 				cmd.CommandType = CommandType.StoredProcedure;
 				cmd.Parameters.AddWithValue("@Idpersonal", parametros.Id_personal); ;
 				cmd.ExecuteNonQuery();
+				Log.WritePerso("Se eliminó correctamente el personal con id: " + parametros.Identificacion + " ✅✅");
 				return true;
 			}
 			catch (Exception ex)
 			{
-
+				Log.Writeerror("Se produjo un error al eliminar el personal con id: " + parametros.Identificacion + " ❌❌");
 				MessageBox.Show(ex.Message);
 				return false;
 			}
 			finally
 			{
 				Conexion.cerrar();
+				Log.WriteCon("Se cerró la conexion en Eliminar personal 🔐🔐");
 			}
 		}
 		/// <summary>
@@ -123,12 +133,10 @@ namespace SistemaAsistencia.Datos
 				da.SelectCommand.Parameters.AddWithValue("@Desde", desde);
 				da.SelectCommand.Parameters.AddWithValue("@Hasta", hasta);
 				da.Fill(dt);
-
-
 			}
 			catch (Exception ex)
 			{
-
+				Log.Writeerror("Ocurrió un error al mostrarpersonal ❌❌");
 				MessageBox.Show(ex.StackTrace);
 			}
 			finally
@@ -148,20 +156,24 @@ namespace SistemaAsistencia.Datos
 			try
 			{
 				Conexion.abrir();
+				Log.WriteCon("Se abrio la conexion en Buscarpersonal");
 				SqlDataAdapter da = new SqlDataAdapter("BuscarPersonal", Conexion.conectar);
 				da.SelectCommand.CommandType = CommandType.StoredProcedure;
 				da.SelectCommand.Parameters.AddWithValue("@Desde", desde);
 				da.SelectCommand.Parameters.AddWithValue("@Hasta", hasta);
 				da.SelectCommand.Parameters.AddWithValue("@Buscador", buscador);
+				Log.WritePerso("Se buscó al personal nombre: " + buscador + " ✅✅");
 				da.Fill(dt);
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show(ex.StackTrace);
+				Log.Writeerror("Ocurrio un error al BuscarPersonal ❌❌");
 			}
 			finally
 			{
 				Conexion.cerrar();
+				Log.WriteCon("Se cerró la conexion en Buscarpersonal 🔐🔐");
 			}
 		}
 		/// <summary>
@@ -174,18 +186,22 @@ namespace SistemaAsistencia.Datos
 			try
 			{
 				Conexion.abrir();
+				Log.WriteCon("Se abrio la conexion en BuscarpersonalId");
 				SqlDataAdapter da = new SqlDataAdapter("BuscarPersonalIdentidad", Conexion.conectar);
 				da.SelectCommand.CommandType = CommandType.StoredProcedure;
 				da.SelectCommand.Parameters.AddWithValue("@Buscador", buscador);
+				Log.WritePerso("Se buscó al personal id: " + buscador + " ✅✅");
 				da.Fill(dt);
 			}
 			catch (Exception ex)
 			{
 				MessageBox.Show(ex.StackTrace);
+				Log.Writeerror("Ocurrio un error al BuscarPersonalId ❌❌");
 			}
 			finally
 			{
 				Conexion.cerrar();
+				Log.WriteCon("Se cerró la conexion en Buscarpersonal 🔐🔐");
 			}
 		}
 
@@ -199,21 +215,24 @@ namespace SistemaAsistencia.Datos
 			try
 			{
 				Conexion.abrir();
+				Log.WriteCon("Se abrió la conexion en restaurarpersonal");
 				SqlCommand cmd = new SqlCommand("restaurar_personal", Conexion.conectar);
 				cmd.CommandType = CommandType.StoredProcedure;
 				cmd.Parameters.AddWithValue("@Idpersonal", parametros.Id_personal); ;
 				cmd.ExecuteNonQuery();
+				Log.WritePerso("Se restauro correctamente el personal id: " + parametros.Identificacion + " ✅✅");
 				return true;
 			}
 			catch (Exception ex)
 			{
-
+				Log.Writeerror("Se produjo un error al restaurar el personal id: " + parametros.Identificacion + " ❌❌");
 				MessageBox.Show(ex.Message);
 				return false;
 			}
 			finally
 			{
 				Conexion.cerrar();
+				Log.WriteCon("Se cerró la conexion en restaurarpersonal 🔐🔐");
 			}
 		}
 		/// <summary>
@@ -225,16 +244,19 @@ namespace SistemaAsistencia.Datos
 			try
 			{
 				Conexion.abrir();
+				Log.WriteCon("Se abrió la conexion en ContarPersonal");
 				SqlCommand cmd = new SqlCommand("select Count(Id_personal) from Personal", Conexion.conectar);
 				Contador = Convert.ToInt32(cmd.ExecuteScalar());
 			}
 			catch (Exception)
 			{
 				Contador = 0;
+				Log.Writeerror("Ocurrió un error en contarpersonal ❌❌");
 			}
 			finally
 			{
 				Conexion.cerrar();
+				Log.WriteCon("Se cerró la conexion en Contarpersonal 🔐🔐");
 			}
 		}
 	}

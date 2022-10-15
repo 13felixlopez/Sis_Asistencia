@@ -20,16 +20,19 @@ namespace SistemaAsistencia.Datos
             try
             {
                 Conexion.abrir();
+                Log.WriteCon("Se abrio la conexion para mostrar los modulos ✅✅");
                 SqlDataAdapter da = new SqlDataAdapter("Select * from Modulos", Conexion.conectar);
                 da.Fill(dt);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.StackTrace);
+                Log.Writeerror("Se produjo un error en mostrar_Modulos ❌❌");
             }
             finally
             {
                 Conexion.cerrar();
+                Log.WriteCon("Se cerro la conexion en mostrar los modulos 🔐🔐");
             }
         }
         /// <summary>
@@ -43,20 +46,24 @@ namespace SistemaAsistencia.Datos
             try
             {
                 Conexion.abrir();
+                Log.WriteCon("Se abrio la conexion en Insertar modulos");
                 SqlCommand cmd = new SqlCommand("Insertar_Modulos", Conexion.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Modulo", parametros.Modulo);
                 cmd.ExecuteNonQuery();
+                Log.WritePerso("Se insertaron los modulos ✅✅");
                 return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                Log.Writeerror("Se produjo un error en insertar modulos ❌❌");
                 return false;
             }
             finally
             {
                 Conexion.cerrar();
+                Log.WriteCon("Se cerro la conexion en insertar modulos 🔐🔐");
             }
         }
     }

@@ -26,6 +26,7 @@ namespace SistemaAsistencia.Datos
             catch (Exception ex)
             {
                 MessageBox.Show(ex.StackTrace);
+                Log.Writeerror("Se produjo un error en buscarAsistenciasId ❌❌");
             }
             finally
             {
@@ -57,13 +58,13 @@ namespace SistemaAsistencia.Datos
             catch (Exception ex)
             {
                 MessageBox.Show(ex.StackTrace);
+                Log.Writeerror("Se produjo un error en la insersion de asistencia ❌❌");
                 return false;
-                Log.WriteLog("Se produjo un error en la insersion de asistencia");
             }
             finally
             {
                 Conexion.cerrar();
-                Log.WriteCon("Se cerró la conexion en insertar asistencia");
+                Log.WriteCon("Se cerró la conexion en insertar asistencia 🔐🔐");
             }
         }
 
@@ -88,14 +89,14 @@ namespace SistemaAsistencia.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.StackTrace);
+                MessageBox.Show(ex.StackTrace); 
+                Log.Writeerror("Se produjo un error al confirmar salida ❌❌");
                 return false;
-                Log.WriteLog("Se produjo un error al confirmar salida");
             }
             finally
             {
                 Conexion.cerrar();
-                Log.WriteCon("Se cerro la conexion en ConfirmarSalida");
+                Log.WriteCon("Se cerro la conexion en ConfirmarSalida 🔐🔐");
             }
         }
         /// <summary>
@@ -122,12 +123,12 @@ namespace SistemaAsistencia.Datos
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                Log.WriteLog("Se produjo un error en mostrar asistencia");
+                Log.Writeerror("Se produjo un error en mostrar asistencia ❌❌");
             }
             finally
             {
                 Conexion.cerrar();
-                Log.WriteCon("Se cerró la conexion en mostrar asistencia");
+                Log.WriteCon("Se cerró la conexion en mostrar asistencia 🔐🔐");
             }
         }
     }

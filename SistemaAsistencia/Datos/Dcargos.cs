@@ -37,13 +37,13 @@ namespace SistemaAsistencia.Datos
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                Log.WritePerso("Se produjo un error al ingresar un nuevo cargo ❌❌");
+                Log.Writeerror("Se produjo un error al ingresar un nuevo cargo ❌❌");
                 return false;
             }
             finally
             {
                 Conexion.cerrar();
-                Log.WriteCon("Se cerró la conexion en insertar cargo");
+                Log.WriteCon("Se cerró la conexion en insertar cargo 🔐🔐");
             }
         }
         /// <summary>
@@ -69,13 +69,13 @@ namespace SistemaAsistencia.Datos
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                Log.WritePerso("Se produjo un error al editar cargo ❌❌");
+                Log.Writeerror("Se produjo un error al editar cargo ❌❌");
                 return false;
             }
             finally
             {
                 Conexion.cerrar();
-                Log.WriteCon("Se cerró la conexion en insertar cargo");
+                Log.WriteCon("Se cerró la conexion en insertar cargo 🔐🔐");
             }
         }
         /// <summary>
@@ -98,12 +98,12 @@ namespace SistemaAsistencia.Datos
             catch (Exception ex)
             {
                 MessageBox.Show(ex.StackTrace);
-                Log.WriteCon("Se produjo un error en buscarcargos");
+                Log.Writeerror("Se produjo un error en buscarcargos ❌❌");
             }
             finally
             {
                 Conexion.cerrar();
-                Log.WriteCon("Se cerró la conexion en buscarcargos");
+                Log.WriteCon("Se cerró la conexion en buscarcargos 🔐🔐");
             }
         }
     }

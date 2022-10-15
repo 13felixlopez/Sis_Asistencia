@@ -47,5 +47,14 @@ namespace SistemaAsistencia
                 writer.WriteLine("---------------------------------------------------------");
             }
         }
+        public static void Writeerror(string ms)
+        {
+            string logerror = ConfigurationManager.AppSettings["logerror"];
+            using (StreamWriter writer = new StreamWriter(logerror, true))
+            {
+                writer.WriteLine($"{DateTime.Now}:{ms}");
+                writer.WriteLine("---------------------------------------------------------");
+            }
+        }
     }
 }

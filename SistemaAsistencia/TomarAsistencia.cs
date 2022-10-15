@@ -116,7 +116,7 @@ namespace SistemaAsistencia
             {
                 DialogResult resultado = MessageBox.Show("Debe agregar una identificacion", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtIdentificacion.Focus();
-                Log.WriteLog("No se inserto la identificacion del personal");
+                Log.WriteLog("No se inserto la identificacion del personal 🚫🚫");
             }
             else if (Identificacion == txtIdentificacion.Text)
             {
@@ -132,14 +132,14 @@ namespace SistemaAsistencia
                         panelObservacion.BringToFront();
                         txtObservacion.Clear();
                         txtObservacion.Focus();
-                        Log.WriteLog("Se agrego una observacion");
+                        Log.WriteLog("Se agrego una observacion 🗒️🗒️");
                     }
                     else
                     {
                         InsertarAsistencias();
                         CopiasBd cb = new CopiasBd();
                         cb.ejecucion2();
-                        Log.WriteLog("Se inserto la entrada de trabajador con id: " + Identificacion);
+                        Log.WriteLog("✅✅Se inserto la entrada de trabajador con id: " + Identificacion);
                     }
                 }
                 else
@@ -147,7 +147,7 @@ namespace SistemaAsistencia
                     ConfirmarSalida();
                     CopiasBd cb = new CopiasBd();
                     cb.ejecucion2();
-                    Log.WriteLog("Se confirmo la salida del trabajador con ID: " + Identificacion);
+                    Log.WriteLog("✅✅Se confirmo la salida del trabajador con ID: " + Identificacion);
                 }
             }
         }
