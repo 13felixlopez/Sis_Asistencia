@@ -42,6 +42,7 @@ namespace SistemaAsistencia.Datos
             try
             {
                 Conexion.abrir();
+                Log.WriteCon("Se abrio la conexion para insertar asistencia");
                 SqlCommand cmd = new SqlCommand("Insertar_ASISTENCIAS", Conexion.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Id_personal", parametros.Id_personal);
@@ -57,10 +58,12 @@ namespace SistemaAsistencia.Datos
             {
                 MessageBox.Show(ex.StackTrace);
                 return false;
+                Log.WriteLog("Se produjo un error en la insersion de asistencia");
             }
             finally
             {
-                Conexion.abrir();
+                Conexion.cerrar();
+                Log.WriteCon("Se cerró la conexion en insertar asistencia");
             }
         }
 
@@ -74,6 +77,7 @@ namespace SistemaAsistencia.Datos
             try
             {
                 Conexion.abrir();
+                Log.WriteCon("Se abrio la conexion para confirmar salida");
                 SqlCommand cmd = new SqlCommand("ConfirmarSalida", Conexion.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Id_personal", parametros.Id_personal);
@@ -86,10 +90,12 @@ namespace SistemaAsistencia.Datos
             {
                 MessageBox.Show(ex.StackTrace);
                 return false;
+                Log.WriteLog("Se produjo un error al confirmar salida");
             }
             finally
             {
                 Conexion.cerrar();
+                Log.WriteCon("Se cerro la conexion en ConfirmarSalida");
             }
         }
         /// <summary>
@@ -105,6 +111,7 @@ namespace SistemaAsistencia.Datos
             try
             {
                 Conexion.abrir();
+                Log.WriteCon("Se abrio la conexion para mostrar Asistencias");
                 SqlDataAdapter da = new SqlDataAdapter("mostrar_asistencias_diarias", Conexion.conectar);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@desde", desde);
@@ -115,10 +122,12 @@ namespace SistemaAsistencia.Datos
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                Log.WriteLog("Se produjo un error en mostrar asistencia");
             }
             finally
             {
                 Conexion.cerrar();
+                Log.WriteCon("Se cerró la conexion en mostrar asistencia");
             }
         }
     }

@@ -121,6 +121,8 @@ namespace SistemaAsistencia
             Icono.Image = ((PictureBox)sender).Image;
             MostrarPanelPass();
             txtcontraseña.Focus();
+            Lusuarios parametros = new Lusuarios();
+            Log.WriteUser("Se selecciono el ususario:  " + Usuario);
         }
 
         private void MostrarPanelPass()
@@ -164,6 +166,7 @@ namespace SistemaAsistencia
                 frm.LoginV = Usuario;
                 frm.Icono.Image = Icono.Image;
                 frm.ShowDialog();
+                Log.WriteUser("Sesion finalizada por el usuario: " + Usuario);
             }
         }
 

@@ -5,6 +5,9 @@ using System.Text;
 using System.Xml;
 namespace SistemaAsistencia.Logica
 {
+    /// <summary>
+    /// Desencriptacion para lograr conectarse a la bd
+    /// </summary>
     public class Desencryptacion
     {
         static private AES aes = new AES();

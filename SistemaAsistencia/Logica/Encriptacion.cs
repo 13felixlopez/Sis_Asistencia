@@ -7,6 +7,9 @@ using System.Text;
 
 namespace SistemaAsistencia.Logica
 {
+    /// <summary>
+    /// Encripta la conxion a la bd en base AES256
+    /// </summary>
     class AES
     {
         private byte[] Encrypt(byte[] clearData, byte[] Key, byte[] IV)

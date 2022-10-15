@@ -9,6 +9,9 @@ using System.Drawing;
 
 namespace SistemaAsistencia.Logica
 {
+    /// <summary>
+    /// Clase que se utliza para modificar el siseño de datagridview y dar formato a otros datos
+    /// </summary>
     public class Bases
     {
         public static void DiseñoDtv(ref DataGridView Listado)

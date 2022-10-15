@@ -46,6 +46,11 @@ namespace SistemaAsistencia.Datos
 				Conexion.cerrar();
 			}
 		}
+		/// <summary>
+		/// Se edita el personal por medio del id que se mande a la bd.
+		/// </summary>
+		/// <param name="parametros"></param>
+		/// <returns></returns>
 		public bool editarPersonal(Lpersonal parametros)
 		{
 			try
@@ -73,6 +78,11 @@ namespace SistemaAsistencia.Datos
 				Conexion.cerrar();
 			}
 		}
+		/// <summary>
+		/// Se elimina o se desactiva el personal que sea igual al id que se mande a la bd
+		/// </summary>
+		/// <param name="parametros"></param>
+		/// <returns></returns>
 		public bool eliminarPersonal(Lpersonal parametros)
 		{
 			try
@@ -95,6 +105,14 @@ namespace SistemaAsistencia.Datos
 				Conexion.cerrar();
 			}
 		}
+		/// <summary>
+		/// Metodo que se utiliza para mostrar el personal y se realiza un paginado donde se muestra el personal de 10 en 10
+		/// Por eso se utilizan las variables "desde" y "hasta", en ellas se guardan las posiciones que se estan mostrando
+		/// Tambien se muestra el cargo que tiene cada persona
+		/// </summary>
+		/// <param name="dt"></param>
+		/// <param name="desde"></param>
+		/// <param name="hasta"></param>
 		public void MostrarPersonal(ref DataTable dt, int desde, int hasta)
 		{
 			try
@@ -118,6 +136,13 @@ namespace SistemaAsistencia.Datos
 				Conexion.cerrar();
 			}
 		}
+		/// <summary>
+		/// Se busca a un trabajador en especifico por medio del nombre
+		/// </summary>
+		/// <param name="dt"></param>
+		/// <param name="desde"></param>
+		/// <param name="hasta"></param>
+		/// <param name="buscador">Variable que contiene el nombre a buscar</param>
 		public void BuscarPersonal(ref DataTable dt, int desde, int hasta, string buscador)
 		{
 			try
@@ -139,6 +164,11 @@ namespace SistemaAsistencia.Datos
 				Conexion.cerrar();
 			}
 		}
+		/// <summary>
+		/// Se busca a un trabajador en especifico por medio de la identificacion
+		/// </summary>
+		/// <param name="dt"></param>
+		/// <param name="buscador"></param>
 		public void BuscarPersonalIdentidad(ref DataTable dt, string buscador)
 		{
 			try
@@ -159,7 +189,11 @@ namespace SistemaAsistencia.Datos
 			}
 		}
 
-
+		/// <summary>
+		/// Ya que no se elimina el personal en la base de datos se puede restaurar y se cambia el estado a actico por medio del id
+		/// </summary>
+		/// <param name="parametros"></param>
+		/// <returns>Si se retorna un false es porque el id que se manda a la bd no existe</returns>
 		public bool restaurar_personal(Lpersonal parametros)
 		{
 			try
@@ -182,6 +216,10 @@ namespace SistemaAsistencia.Datos
 				Conexion.cerrar();
 			}
 		}
+		/// <summary>
+		/// Se hace un conteo del personal ingresado para hacer la division y poderlo paginar
+		/// </summary>
+		/// <param name="Contador"></param>
 		public void ContarPersonal(ref int Contador)
 		{
 			try

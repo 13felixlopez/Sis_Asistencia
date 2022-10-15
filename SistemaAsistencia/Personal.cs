@@ -85,7 +85,7 @@ namespace SistemaAsistencia
         private void LocalizarDtvCargos()
         {
             datalistadoCargos.Location = new Point(txtSueldoHora.Location.X, txtSueldoHora.Location.Y);
-            datalistadoCargos.Size = new Size(469, 141);
+            datalistadoCargos.Size = new Size(469, 150);
             datalistadoCargos.Visible = true;
             lblsueldo.Visible = false;
             PanelBtnguardarPer.Visible = false;
@@ -192,8 +192,8 @@ namespace SistemaAsistencia
         private void ObtenerCargosEditar()
         {
             Idcargo = Convert.ToInt32(datalistadoCargos.SelectedCells[1].Value);
-            txtCargo.Text = datalistadoCargos.SelectedCells[2].Value.ToString();
-            txtSueldoHora.Text = datalistadoCargos.SelectedCells[3].Value.ToString();
+            txtCargoG.Text = datalistadoCargos.SelectedCells[2].Value.ToString();
+            txtsueldoG.Text = datalistadoCargos.SelectedCells[3].Value.ToString();
             btnGuardarC.Visible = false;
             btnGuardarCambiosC.Visible = true;
             txtCargoG.Focus();
@@ -407,7 +407,8 @@ namespace SistemaAsistencia
             try
             {
                 lbl_Pagina.Text = (hasta / items_por_pagina).ToString();
-                lbl_totalPaginas.Text = (Math.Ceiling(Convert.ToSingle(Contador) / items_por_pagina).ToString());
+                lbl_totalPaginas.Text = Math.Ceiling(Convert.ToSingle(Contador) / items_por_pagina).ToString();
+                totalPaginas = Convert.ToInt32(lbl_totalPaginas.Text);
             }
             catch (Exception)
             {

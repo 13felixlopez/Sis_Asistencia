@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace SistemaAsistencia.Logica
 {
+    /// <summary>
+    /// Nodo con datos de asistencia
+    /// </summary>
     public class Lasistencias
     {
         public int Id_asistencia { get; set; }

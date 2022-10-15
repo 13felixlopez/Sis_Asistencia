@@ -63,6 +63,9 @@ namespace SistemaAsistencia
             this.Eliminar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.panelRegistro = new System.Windows.Forms.Panel();
+            this.txtusuario = new System.Windows.Forms.TextBox();
+            this.txtcontraseña = new System.Windows.Forms.TextBox();
+            this.txtnombre = new System.Windows.Forms.TextBox();
             this.lblanuncioIcono = new System.Windows.Forms.Label();
             this.panelIcono = new System.Windows.Forms.Panel();
             this.btnVolverIcono = new System.Windows.Forms.Button();
@@ -73,9 +76,6 @@ namespace SistemaAsistencia
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.Icono = new System.Windows.Forms.PictureBox();
-            this.txtnombre = new System.Windows.Forms.TextBox();
-            this.txtcontraseña = new System.Windows.Forms.TextBox();
-            this.txtusuario = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -112,8 +112,8 @@ namespace SistemaAsistencia
             // 
             // pictureBox7
             // 
-            this.pictureBox7.BackgroundImage = global::SistemaAsistencia.Properties.Resources.extraterrestre;
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox7.Image = global::SistemaAsistencia.Properties.Resources.extraterrestre;
             this.pictureBox7.Location = new System.Drawing.Point(3, 3);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(168, 164);
@@ -124,8 +124,8 @@ namespace SistemaAsistencia
             // 
             // pictureBox8
             // 
-            this.pictureBox8.BackgroundImage = global::SistemaAsistencia.Properties.Resources.comenzar;
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox8.Image = global::SistemaAsistencia.Properties.Resources.comenzar;
             this.pictureBox8.Location = new System.Drawing.Point(177, 3);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(168, 164);
@@ -136,8 +136,8 @@ namespace SistemaAsistencia
             // 
             // pictureBox9
             // 
-            this.pictureBox9.BackgroundImage = global::SistemaAsistencia.Properties.Resources.animal;
             this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox9.Image = global::SistemaAsistencia.Properties.Resources.animal;
             this.pictureBox9.Location = new System.Drawing.Point(351, 3);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(168, 164);
@@ -148,8 +148,8 @@ namespace SistemaAsistencia
             // 
             // pictureBox10
             // 
-            this.pictureBox10.BackgroundImage = global::SistemaAsistencia.Properties.Resources.MonoOrus;
             this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox10.Image = global::SistemaAsistencia.Properties.Resources.MonoOrus;
             this.pictureBox10.Location = new System.Drawing.Point(525, 3);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(168, 164);
@@ -499,6 +499,27 @@ namespace SistemaAsistencia
             this.panelRegistro.TabIndex = 6;
             this.panelRegistro.Visible = false;
             // 
+            // txtusuario
+            // 
+            this.txtusuario.Location = new System.Drawing.Point(155, 57);
+            this.txtusuario.Name = "txtusuario";
+            this.txtusuario.Size = new System.Drawing.Size(152, 26);
+            this.txtusuario.TabIndex = 621;
+            // 
+            // txtcontraseña
+            // 
+            this.txtcontraseña.Location = new System.Drawing.Point(155, 95);
+            this.txtcontraseña.Name = "txtcontraseña";
+            this.txtcontraseña.Size = new System.Drawing.Size(135, 26);
+            this.txtcontraseña.TabIndex = 620;
+            // 
+            // txtnombre
+            // 
+            this.txtnombre.Location = new System.Drawing.Point(157, 23);
+            this.txtnombre.Name = "txtnombre";
+            this.txtnombre.Size = new System.Drawing.Size(242, 26);
+            this.txtnombre.TabIndex = 619;
+            // 
             // lblanuncioIcono
             // 
             this.lblanuncioIcono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -518,9 +539,9 @@ namespace SistemaAsistencia
             this.panelIcono.Controls.Add(this.AgregarIconoPC);
             this.panelIcono.Controls.Add(this.flowLayoutPanel2);
             this.panelIcono.Controls.Add(this.flowLayoutPanel3);
-            this.panelIcono.Location = new System.Drawing.Point(695, 169);
+            this.panelIcono.Location = new System.Drawing.Point(874, 186);
             this.panelIcono.Name = "panelIcono";
-            this.panelIcono.Size = new System.Drawing.Size(240, 438);
+            this.panelIcono.Size = new System.Drawing.Size(259, 438);
             this.panelIcono.TabIndex = 618;
             this.panelIcono.Visible = false;
             // 
@@ -566,8 +587,8 @@ namespace SistemaAsistencia
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackgroundImage = global::SistemaAsistencia.Properties.Resources.Trinaranja;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Image = global::SistemaAsistencia.Properties.Resources.Trinaranja;
             this.pictureBox3.Location = new System.Drawing.Point(3, 3);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(168, 164);
@@ -578,8 +599,8 @@ namespace SistemaAsistencia
             // 
             // pictureBox4
             // 
-            this.pictureBox4.BackgroundImage = global::SistemaAsistencia.Properties.Resources.palanca_de_mando;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox4.Image = global::SistemaAsistencia.Properties.Resources.palanca_de_mando;
             this.pictureBox4.Location = new System.Drawing.Point(177, 3);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(168, 164);
@@ -590,8 +611,8 @@ namespace SistemaAsistencia
             // 
             // pictureBox5
             // 
-            this.pictureBox5.BackgroundImage = global::SistemaAsistencia.Properties.Resources.nuclear;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox5.Image = global::SistemaAsistencia.Properties.Resources.nuclear;
             this.pictureBox5.Location = new System.Drawing.Point(351, 3);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(168, 164);
@@ -602,8 +623,8 @@ namespace SistemaAsistencia
             // 
             // pictureBox6
             // 
-            this.pictureBox6.BackgroundImage = global::SistemaAsistencia.Properties.Resources.fuego__1_;
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox6.Image = global::SistemaAsistencia.Properties.Resources.fuego__1_;
             this.pictureBox6.Location = new System.Drawing.Point(525, 3);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(168, 164);
@@ -621,27 +642,6 @@ namespace SistemaAsistencia
             this.Icono.TabIndex = 616;
             this.Icono.TabStop = false;
             this.Icono.Click += new System.EventHandler(this.Icono_Click);
-            // 
-            // txtnombre
-            // 
-            this.txtnombre.Location = new System.Drawing.Point(157, 23);
-            this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(242, 26);
-            this.txtnombre.TabIndex = 619;
-            // 
-            // txtcontraseña
-            // 
-            this.txtcontraseña.Location = new System.Drawing.Point(155, 95);
-            this.txtcontraseña.Name = "txtcontraseña";
-            this.txtcontraseña.Size = new System.Drawing.Size(135, 26);
-            this.txtcontraseña.TabIndex = 620;
-            // 
-            // txtusuario
-            // 
-            this.txtusuario.Location = new System.Drawing.Point(155, 57);
-            this.txtusuario.Name = "txtusuario";
-            this.txtusuario.Size = new System.Drawing.Size(152, 26);
-            this.txtusuario.TabIndex = 621;
             // 
             // CtlUsuarios
             // 

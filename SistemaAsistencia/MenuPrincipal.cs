@@ -21,7 +21,7 @@ namespace SistemaAsistencia
         {
             InitializeComponent();
             timer1.Start();
-            timer1.Interval = 30000;
+            timer1.Interval = 10000;
         }
         public int Idusuario;
         public string LoginV;
@@ -199,15 +199,11 @@ namespace SistemaAsistencia
             frm.ShowDialog();
         }
 
-        private void panel23_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             CopiasBd cb = new CopiasBd();
             cb.ejecucion2();
+            cb.purga();
         }
     }
 }

@@ -12,6 +12,11 @@ namespace SistemaAsistencia.Datos
 {
     public class Dusuarios
     {
+		/// <summary>
+		/// Se mandan los datos necesarios para agregar un nuevo usuario y su estado predeterminado es activo para utilizarlo
+		/// </summary>
+		/// <param name="parametros"></param>
+		/// <returns>Si retorna flase es porque faltan datos o hay un error en los datos ingresados</returns>
 		public bool InsertarUsuarios(Lusuarios parametros)
 		{
 			try
@@ -38,6 +43,10 @@ namespace SistemaAsistencia.Datos
 			}
 
 		}
+		/// <summary>
+		/// Se muestran todos los usuarios ya sea su estado activo o eliminado
+		/// </summary>
+		/// <param name="dt"></param>
 		public void mostrar_Usuarios(ref DataTable dt)
 		{
 			try
@@ -55,6 +64,10 @@ namespace SistemaAsistencia.Datos
 				Conexion.cerrar();
 			}
 		}
+		/// <summary>
+		/// Se muestran unicamente los usuarios que estan activos
+		/// </summary>
+		/// <param name="dt"></param>
 		public void mostrar_Usuarios_Activo(ref DataTable dt)
 		{
 			try
@@ -72,6 +85,11 @@ namespace SistemaAsistencia.Datos
 				Conexion.cerrar();
 			}
 		}
+		/// <summary>
+		/// Se compeueba el id de usuario para filtrar unicamente al usuario principal
+		/// </summary>
+		/// <param name="Idusuario"></param>
+		/// <param name="Login"></param>
 		public void ObtenerIdUsuario(ref int Idusuario, string Login)
 		{
 			try
@@ -201,6 +219,11 @@ namespace SistemaAsistencia.Datos
 				Indicador = "Incorrecto";
 			}
 		}
+		/// <summary>
+		/// Comprobacion del nombre de usuario y la contraseña para permitir el acceso al sistema
+		/// </summary>
+		/// <param name="parametros"></param>
+		/// <param name="id"></param>
 		public void validarUsuario(Lusuarios parametros, ref int id)
 		{
 			try

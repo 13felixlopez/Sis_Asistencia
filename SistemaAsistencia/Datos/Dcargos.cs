@@ -25,21 +25,25 @@ namespace SistemaAsistencia.Datos
             try
             {
                 Conexion.abrir();
+                Log.WriteCon("Se abrio la conexion para insertar cargo");
                 SqlCommand cmd = new SqlCommand("insertar_Cargo", Conexion.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Cargo", parametros.Cargo);
                 cmd.Parameters.AddWithValue("@SueldoPorHora", parametros.SueldoPorHora);
                 cmd.ExecuteNonQuery();
+                Log.WritePerso("Se inserto un nuevo cargo ✅✅");
                 return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                Log.WritePerso("Se produjo un error al ingresar un nuevo cargo ❌❌");
                 return false;
             }
             finally
             {
                 Conexion.cerrar();
+                Log.WriteCon("Se cerró la conexion en insertar cargo");
             }
         }
         /// <summary>
@@ -52,22 +56,26 @@ namespace SistemaAsistencia.Datos
             try
             {
                 Conexion.abrir();
+                Log.WriteCon("Se abrio la conexion para insertar cargo");
                 SqlCommand cmd = new SqlCommand("editar_Cargo", Conexion.conectar);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", parametros.Id_cargo);
                 cmd.Parameters.AddWithValue("@Cargo", parametros.Cargo);
                 cmd.Parameters.AddWithValue("@Sueldo", parametros.SueldoPorHora);
                 cmd.ExecuteNonQuery();
+                Log.WritePerso("Se editó el cargo: " + parametros.Cargo + " ✅✅");
                 return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                Log.WritePerso("Se produjo un error al editar cargo ❌❌");
                 return false;
             }
             finally
             {
                 Conexion.cerrar();
+                Log.WriteCon("Se cerró la conexion en insertar cargo");
             }
         }
         /// <summary>
@@ -81,6 +89,7 @@ namespace SistemaAsistencia.Datos
             try
             {
                 Conexion.abrir();
+                Log.WriteCon("Se abrio la conexion para buscarcargos");
                 SqlDataAdapter da = new SqlDataAdapter("buscarCargos", Conexion.conectar);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
                 da.SelectCommand.Parameters.AddWithValue("@buscador", buscador);
@@ -89,10 +98,12 @@ namespace SistemaAsistencia.Datos
             catch (Exception ex)
             {
                 MessageBox.Show(ex.StackTrace);
+                Log.WriteCon("Se produjo un error en buscarcargos");
             }
             finally
             {
                 Conexion.cerrar();
+                Log.WriteCon("Se cerró la conexion en buscarcargos");
             }
         }
     }

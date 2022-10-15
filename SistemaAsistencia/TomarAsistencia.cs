@@ -11,11 +11,11 @@ namespace SistemaAsistencia
 {
     public partial class TomarAsistencia : Form
     {
-        //string path = HttpContext.Current.Request.MapPath("~");
-        //Log lg = new Log(path);
         public TomarAsistencia()
         {
             InitializeComponent();
+            timer1.Start();
+            timer1.Interval = 10000;
         }
         string Identificacion;
         int IdPersonal;
@@ -51,7 +51,6 @@ namespace SistemaAsistencia
             parametros.Observacion = txtObservacion.Text;
             if (funcion.InsertarAsistencias(parametros)==true)
             {
-                //lg.Add("ENTRADA REGISTRADA, ID="+Identificacion);
                 txtaviso.Text = "ENTRADA REGISTRADA";
                 txtIdentificacion.Clear();
                 txtIdentificacion.Focus();
@@ -117,6 +116,7 @@ namespace SistemaAsistencia
             {
                 DialogResult resultado = MessageBox.Show("Debe agregar una identificacion", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtIdentificacion.Focus();
+                Log.WriteLog("No se inserto la identificacion del personal");
             }
             else if (Identificacion == txtIdentificacion.Text)
             {
@@ -132,12 +132,14 @@ namespace SistemaAsistencia
                         panelObservacion.BringToFront();
                         txtObservacion.Clear();
                         txtObservacion.Focus();
+                        Log.WriteLog("Se agrego una observacion");
                     }
                     else
                     {
                         InsertarAsistencias();
                         CopiasBd cb = new CopiasBd();
                         cb.ejecucion2();
+                        Log.WriteLog("Se inserto la entrada de trabajador con id: " + Identificacion);
                     }
                 }
                 else
@@ -145,8 +147,16 @@ namespace SistemaAsistencia
                     ConfirmarSalida();
                     CopiasBd cb = new CopiasBd();
                     cb.ejecucion2();
+                    Log.WriteLog("Se confirmo la salida del trabajador con ID: " + Identificacion);
                 }
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            CopiasBd cb = new CopiasBd();
+            cb.ejecucion2();
+            cb.purga();
         }
     }
 }

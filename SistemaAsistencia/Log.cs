@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -7,55 +8,44 @@ using System.Threading.Tasks;
 
 namespace SistemaAsistencia
 {
-    public class Log
+    public static class Log
     {
-        private string Path = "";
-
-
-        public Log(string Path)
+        public static void WriteLog(string message)
         {
-            this.Path = Path;
-        }
-
-        public void Add(string sLog)
-        {
-            CreateDirectory();
-            string nombre = GetNameFile();
-            string cadena = "";
-
-            cadena += DateTime.Now + " - " + sLog + Environment.NewLine;
-
-            StreamWriter sw = new StreamWriter(Path + "/" + nombre, true);
-            sw.Write(cadena);
-            sw.Close();
-
-        }
-
-        #region HELPER
-        private string GetNameFile()
-        {
-            string nombre = "";
-
-            nombre = "log_" + DateTime.Now.Year + "_" + DateTime.Now.Month + "_" + DateTime.Now.Day + ".txt";
-
-            return nombre;
-        }
-
-        private void CreateDirectory()
-        {
-            try
+            string logPath = ConfigurationManager.AppSettings["logPath"];
+            using (StreamWriter writer = new StreamWriter(logPath, true))
             {
-                if (!Directory.Exists(Path))
-                    Directory.CreateDirectory(Path);
-
-
-            }
-            catch (DirectoryNotFoundException ex)
-            {
-                throw new Exception(ex.Message);
-
+                writer.WriteLine($"{DateTime.Now}:{message}");
+                writer.WriteLine("---------------------------------------------------------");
             }
         }
-        #endregion
+
+        public static void WriteUser(string ms)
+        {
+            string logUser = ConfigurationManager.AppSettings["logUser"];
+            using (StreamWriter writer = new StreamWriter(logUser, true))
+            {
+                writer.WriteLine($"{DateTime.Now}:{ms}");
+                writer.WriteLine("---------------------------------------------------------");
+            }
+        }
+        public static void WriteCon(string ms)
+        {
+            string logCon = ConfigurationManager.AppSettings["logCon"];
+            using (StreamWriter writer = new StreamWriter(logCon, true))
+            {
+                writer.WriteLine($"{DateTime.Now}:{ms}");
+                writer.WriteLine("---------------------------------------------------------");
+            }
+        }
+        public static void WritePerso(string ms)
+        {
+            string logPerso = ConfigurationManager.AppSettings["logPerso"];
+            using (StreamWriter writer = new StreamWriter(logPerso, true))
+            {
+                writer.WriteLine($"{DateTime.Now}:{ms}");
+                writer.WriteLine("---------------------------------------------------------");
+            }
+        }
     }
 }
