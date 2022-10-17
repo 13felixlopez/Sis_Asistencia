@@ -154,8 +154,8 @@ namespace SistemaAsistencia
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            CopiasBd cb = new CopiasBd();
-            cb.ejecucion2();
+            Backup cb = new Backup();
+            cb.GenerarCopia();
             cb.purga();
         }
     }

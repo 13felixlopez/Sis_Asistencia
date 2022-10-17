@@ -29,6 +29,7 @@ namespace SistemaAsistencia
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.Label8 = new System.Windows.Forms.Label();
             this.PanelUsuarios = new System.Windows.Forms.Panel();
@@ -57,6 +58,7 @@ namespace SistemaAsistencia
             this.panel1 = new System.Windows.Forms.Panel();
             this.Icono = new System.Windows.Forms.PictureBox();
             this.PictureBox7 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.PanelUsuarios.SuspendLayout();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -504,6 +506,10 @@ namespace SistemaAsistencia
             this.PictureBox7.TabStop = false;
             this.PictureBox7.Click += new System.EventHandler(this.PictureBox7_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -560,5 +566,6 @@ namespace SistemaAsistencia
         internal System.Windows.Forms.PictureBox PictureBox7;
         private System.Windows.Forms.PictureBox Icono;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

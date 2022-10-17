@@ -18,6 +18,8 @@ namespace SistemaAsistencia
         public Login()
         {
             InitializeComponent();
+            timer1.Start();
+            timer1.Interval = 10000;
         }
         string Usuario;
         string User;
@@ -246,6 +248,13 @@ namespace SistemaAsistencia
             Dispose();
             Login lg = new Login();
             lg.ShowDialog();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Backup cb = new Backup();
+            cb.GenerarCopia();
+            cb.purga();
         }
     }
 }
