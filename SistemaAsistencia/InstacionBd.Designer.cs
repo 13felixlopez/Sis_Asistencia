@@ -423,9 +423,9 @@ namespace SistemaAsistencia
             this.panel1.Controls.Add(this.Label66);
             this.panel1.Controls.Add(this.PictureBox7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(3, 64);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1370, 90);
+            this.panel1.Size = new System.Drawing.Size(1364, 90);
             this.panel1.TabIndex = 625;
             // 
             // Label66
@@ -658,8 +658,8 @@ namespace SistemaAsistencia
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(29)))), ((int)(((byte)(29)))));
             this.ClientSize = new System.Drawing.Size(1370, 744);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel8);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.Panel4);
             this.Controls.Add(this.Panel2);
             this.Name = "InstacionBd";

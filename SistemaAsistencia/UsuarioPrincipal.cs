@@ -59,15 +59,9 @@ namespace SistemaAsistencia
                 InsertarModulos();
                 ObtenerIdUsuario();
                 InsertarPermisos();
-                InsertarCopiasBd();
             }
         }
 
-        private void InsertarCopiasBd()
-        {
-            DcopiasBd funcion = new DcopiasBd();
-            funcion.InsertarCopiasBd();
-        }
         private void InsertarModulos()
         {
             Lmodulos parametros = new Lmodulos();

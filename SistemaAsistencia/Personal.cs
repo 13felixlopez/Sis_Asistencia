@@ -234,9 +234,9 @@ namespace SistemaAsistencia
             Lcargos parametros = new Lcargos();
             Dcargos funcion = new Dcargos();
             parametros.Id_cargo = Idcargo;
-            parametros.Cargo = txtCargo.Text;
+            parametros.Cargo = txtCargoG.Text;
             parametros.SueldoPorHora = Convert.ToDouble(txtsueldoG.Text);
-            if (funcion.editar_Cargo(parametros)==true)
+            if (funcion.editar_Cargo(parametros) == true)
             {
                 txtCargo.Clear();
                 BuscarCargos();
@@ -396,12 +396,6 @@ namespace SistemaAsistencia
             Paginar();
         }
 
-        private void Contar()
-        {
-            Dpersonal funcion = new Dpersonal();
-            funcion.ContarPersonal(ref Contador);
-        }
-
         private void Paginar()
         {
             try
@@ -414,6 +408,11 @@ namespace SistemaAsistencia
             {
 
             }
+        }
+        private void Contar()
+        {
+            Dpersonal funcion = new Dpersonal();
+            funcion.ContarPersonal(ref Contador);
         }
 
         private void btn_atras_Click(object sender, EventArgs e)

@@ -61,5 +61,20 @@ namespace SistemaAsistencia
             var files = dir.GetFiles();
             files.AsParallel().Reverse().Skip(3).ForAll((f) => f.Delete());
         }
+
+        public void Restore()
+        {
+            Conexion.abrir();
+            SqlCommand cdm = new SqlCommand("USE master", Conexion.conectar);
+            cdm.ExecuteNonQuery();
+
+            SqlCommand user = new SqlCommand("ALTER DATABASE SET SINGLE_USER WITH ROLLBACK IMMEDIATE",Conexion.conectar);
+            user.ExecuteNonQuery();
+
+            SqlCommand res = new SqlCommand("RESTORE DATABASE", Conexion.conectar);
+            user.ExecuteNonQuery();
+
+            Conexion.cerrar();
+        }
     }
 }

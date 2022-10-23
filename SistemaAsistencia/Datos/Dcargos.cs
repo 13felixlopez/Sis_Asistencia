@@ -98,7 +98,7 @@ namespace SistemaAsistencia.Datos
             catch (Exception ex)
             {
                 MessageBox.Show(ex.StackTrace);
-                Log.Writeerror("Se produjo un error en buscarcargos ❌❌");
+                Log.Writeerror("Se produjo un error en buscarcargos ❌❌`");
             }
             finally
             {

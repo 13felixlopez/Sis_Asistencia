@@ -10,6 +10,7 @@ namespace SistemaAsistencia
 {
     public static class Log
     {
+        
         public static void WriteLog(string message)
         {
             string logPath = ConfigurationManager.AppSettings["logPath"];
@@ -19,7 +20,6 @@ namespace SistemaAsistencia
                 writer.WriteLine("---------------------------------------------------------");
             }
         }
-
         public static void WriteUser(string ms)
         {
             string logUser = ConfigurationManager.AppSettings["logUser"];

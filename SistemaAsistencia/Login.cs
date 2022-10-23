@@ -19,7 +19,7 @@ namespace SistemaAsistencia
         {
             InitializeComponent();
             timer1.Start();
-            timer1.Interval = 10000;
+            timer1.Interval = 1000000;
         }
         string Usuario;
         string User;

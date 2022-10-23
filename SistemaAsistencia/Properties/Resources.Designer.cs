@@ -283,6 +283,16 @@ namespace SistemaAsistencia.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_close_sign_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_close_sign_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("Logo-removebg-preview", resourceCulture);

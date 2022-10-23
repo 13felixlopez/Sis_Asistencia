@@ -59,7 +59,7 @@
             this.panel22 = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.btnRespaldos = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
@@ -67,6 +67,9 @@
             this.panel13 = new System.Windows.Forms.Panel();
             this.dlg = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Reloj = new System.Windows.Forms.Timer(this.components);
+            this.panelreloj = new System.Windows.Forms.Panel();
+            this.lblReloj = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -80,6 +83,7 @@
             this.panel2.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel11.SuspendLayout();
+            this.panelreloj.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel9
@@ -302,6 +306,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.panelreloj);
             this.panel4.Controls.Add(this.panel18);
             this.panel4.Controls.Add(this.panel2);
             this.panel4.Controls.Add(this.panel14);
@@ -323,7 +328,7 @@
             this.panel18.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel18.Location = new System.Drawing.Point(0, 325);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(165, 112);
+            this.panel18.Size = new System.Drawing.Size(165, 89);
             this.panel18.TabIndex = 7;
             // 
             // pictureBox1
@@ -332,7 +337,7 @@
             this.pictureBox1.Image = global::SistemaAsistencia.Properties.Resources.Logo_removebg_preview;
             this.pictureBox1.Location = new System.Drawing.Point(10, 10);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(145, 102);
+            this.pictureBox1.Size = new System.Drawing.Size(145, 79);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -342,7 +347,7 @@
             this.panel21.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel21.Location = new System.Drawing.Point(155, 10);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(10, 102);
+            this.panel21.Size = new System.Drawing.Size(10, 79);
             this.panel21.TabIndex = 4;
             // 
             // panel19
@@ -350,7 +355,7 @@
             this.panel19.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel19.Location = new System.Drawing.Point(0, 10);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(10, 102);
+            this.panel19.Size = new System.Drawing.Size(10, 79);
             this.panel19.TabIndex = 1;
             // 
             // panel20
@@ -409,7 +414,7 @@
             // 
             // panel14
             // 
-            this.panel14.Controls.Add(this.btnRespaldos);
+            this.panel14.Controls.Add(this.btnCerrar);
             this.panel14.Controls.Add(this.panel15);
             this.panel14.Controls.Add(this.panel16);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
@@ -418,24 +423,26 @@
             this.panel14.Size = new System.Drawing.Size(165, 65);
             this.panel14.TabIndex = 3;
             // 
-            // btnRespaldos
+            // btnCerrar
             // 
-            this.btnRespaldos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
-            this.btnRespaldos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRespaldos.FlatAppearance.BorderSize = 0;
-            this.btnRespaldos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRespaldos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRespaldos.ForeColor = System.Drawing.Color.White;
-            this.btnRespaldos.Image = global::SistemaAsistencia.Properties.Resources.Respaldo;
-            this.btnRespaldos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRespaldos.Location = new System.Drawing.Point(10, 10);
-            this.btnRespaldos.Name = "btnRespaldos";
-            this.btnRespaldos.Size = new System.Drawing.Size(155, 55);
-            this.btnRespaldos.TabIndex = 3;
-            this.btnRespaldos.Text = "Respaldos";
-            this.btnRespaldos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRespaldos.UseVisualStyleBackColor = false;
-            this.btnRespaldos.Click += new System.EventHandler(this.btnRespaldos_Click);
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.ForeColor = System.Drawing.Color.White;
+            this.btnCerrar.Image = global::SistemaAsistencia.Properties.Resources.icons8_close_sign_32;
+            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrar.Location = new System.Drawing.Point(10, 10);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(155, 55);
+            this.btnCerrar.TabIndex = 3;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // panel15
             // 
@@ -499,6 +506,31 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // Reloj
+            // 
+            this.Reloj.Tick += new System.EventHandler(this.Reloj_Tick);
+            // 
+            // panelreloj
+            // 
+            this.panelreloj.Controls.Add(this.lblReloj);
+            this.panelreloj.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelreloj.Location = new System.Drawing.Point(0, 414);
+            this.panelreloj.Name = "panelreloj";
+            this.panelreloj.Size = new System.Drawing.Size(165, 54);
+            this.panelreloj.TabIndex = 8;
+            // 
+            // lblReloj
+            // 
+            this.lblReloj.AutoSize = true;
+            this.lblReloj.BackColor = System.Drawing.Color.Transparent;
+            this.lblReloj.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReloj.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblReloj.Location = new System.Drawing.Point(30, 12);
+            this.lblReloj.Name = "lblReloj";
+            this.lblReloj.Size = new System.Drawing.Size(90, 28);
+            this.lblReloj.TabIndex = 0;
+            this.lblReloj.Text = "label1";
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -523,6 +555,8 @@
             this.panel2.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
+            this.panelreloj.ResumeLayout(false);
+            this.panelreloj.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -549,7 +583,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Button btnRespaldos;
+        private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Panel panel11;
@@ -567,6 +601,9 @@
         private System.Windows.Forms.OpenFileDialog dlg;
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panelreloj;
+        private System.Windows.Forms.Label lblReloj;
+        private System.Windows.Forms.Timer Reloj;
     }
 }
 

@@ -20,8 +20,9 @@ namespace SistemaAsistencia
         public MenuPrincipal()
         {
             InitializeComponent();
+            Reloj.Start();
             timer1.Start();
-            timer1.Interval = 10000;
+            timer1.Interval = 1000000;
         }
         public int Idusuario;
         public string LoginV;
@@ -52,7 +53,6 @@ namespace SistemaAsistencia
             btnRegistro.Enabled = false;
             btnUsuarios.Enabled = false;
             btnRestaurar.Enabled = false;
-            btnRespaldos.Enabled = false;
             foreach (DataRow rowPermisos in dt.Rows)
             {
                 string Modulo = Convert.ToString(rowPermisos["Modulo"]);
@@ -71,7 +71,6 @@ namespace SistemaAsistencia
                 }
                 if (Modulo=="Respaldos")
                 {
-                    btnRespaldos.Enabled = true;
                     btnRestaurar.Enabled = true;
                 }
                 if (Modulo == "Registro")
@@ -102,13 +101,6 @@ namespace SistemaAsistencia
             Application.Exit();
         }
 
-        private void btnRespaldos_Click(object sender, EventArgs e)
-        {
-            PanelPadre.Controls.Clear();
-            CopiasBd control = new CopiasBd();
-            control.Dock = DockStyle.Fill;
-            PanelPadre.Controls.Add(control);
-        }
         private void RestaurarBd()
         {
             dlg.InitialDirectory = "";
@@ -121,10 +113,12 @@ namespace SistemaAsistencia
                 DialogResult pregunta = MessageBox.Show("Usted está a punto de restaurar la base de datos," + "asegurese de que el archivo .bak sea reciente, de" + "lo contrario podría perder información y no podrá" + "recuperarla, ¿desea continuar?", "Restauración de base de datos", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (pregunta == DialogResult.Yes)
                 {
-
+                   
                     SqlConnection cnn = new SqlConnection("Server=" + Servidor + ";database=master; integrated security=yes");
                     try
                     {
+                        Backup rest = new Backup();
+                        rest.Restore();
                         cnn.Open();
                         string Proceso = "EXEC msdb.dbo.sp_delete_database_backuphistory @database_name = N'" + Base_De_datos + "' USE [master] ALTER DATABASE [" + Base_De_datos + "] SET SINGLE_USER WITH ROLLBACK IMMEDIATE DROP DATABASE [" + Base_De_datos + "] RESTORE DATABASE " + Base_De_datos + " FROM DISK = N'" + ruta + "' WITH FILE = 1, NOUNLOAD, REPLACE, STATS = 10";
                         SqlCommand BorraRestaura = new SqlCommand(Proceso, cnn);
@@ -156,10 +150,12 @@ namespace SistemaAsistencia
             SqlConnection cnn = new SqlConnection("Server=" + Servidor + ";database=master; integrated security=yes");
             try
             {
-                cnn.Open();
-                string Proceso = "EXEC msdb.dbo.sp_delete_database_backuphistory @database_name = N'" + Base_De_datos + "' USE [master] ALTER DATABASE [" + Base_De_datos + "] SET SINGLE_USER WITH ROLLBACK IMMEDIATE DROP DATABASE [" + Base_De_datos + "] RESTORE DATABASE " + Base_De_datos + " FROM DISK = N'" + ruta + "' WITH FILE = 1, NOUNLOAD, REPLACE, STATS = 10";
-                SqlCommand BorraRestaura = new SqlCommand(Proceso, cnn);
-                BorraRestaura.ExecuteNonQuery();
+                Backup rest = new Backup();
+                rest.Restore();
+                //cnn.Open();
+                //string Proceso = "EXEC msdb.dbo.sp_delete_database_backuphistory @database_name = N'" + Base_De_datos + "' USE [master] ALTER DATABASE [" + Base_De_datos + "] SET SINGLE_USER WITH ROLLBACK IMMEDIATE DROP DATABASE [" + Base_De_datos + "] RESTORE DATABASE " + Base_De_datos + " FROM DISK = N'" + ruta + "' WITH FILE = 1, NOUNLOAD, REPLACE, STATS = 10";
+                //SqlCommand BorraRestaura = new SqlCommand(Proceso, cnn);
+                //BorraRestaura.ExecuteNonQuery();
                 MessageBox.Show("La base de datos ha sido restaurada satisfactoriamente! Vuelve a Iniciar El Aplicativo", "Restauración de base de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Dispose();
 
@@ -204,6 +200,18 @@ namespace SistemaAsistencia
             Backup cb = new Backup();
             cb.GenerarCopia();
             cb.purga();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Dispose();
+            Login lg = new Login();
+            lg.ShowDialog();
+        }
+
+        private void Reloj_Tick(object sender, EventArgs e)
+        {
+            lblReloj.Text = DateTime.Now.ToLongTimeString();
         }
     }
 }

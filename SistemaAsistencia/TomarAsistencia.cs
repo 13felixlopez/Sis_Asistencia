@@ -16,6 +16,7 @@ namespace SistemaAsistencia
             InitializeComponent();
             timer1.Start();
             timer1.Interval = 10000;
+            Alog();
         }
         string Identificacion;
         int IdPersonal;
@@ -137,7 +138,7 @@ namespace SistemaAsistencia
                     else
                     {
                         InsertarAsistencias();
-                        CopiasBd cb = new CopiasBd();
+                        Backup cb = new Backup();
                         cb.ejecucion2();
                         Log.WriteLog("✅✅Se inserto la entrada de trabajador con id: " + Identificacion);
                     }
@@ -145,7 +146,7 @@ namespace SistemaAsistencia
                 else
                 {
                     ConfirmarSalida();
-                    CopiasBd cb = new CopiasBd();
+                    Backup cb = new Backup();
                     cb.ejecucion2();
                     Log.WriteLog("✅✅Se confirmo la salida del trabajador con ID: " + Identificacion);
                 }
@@ -157,6 +158,18 @@ namespace SistemaAsistencia
             Backup cb = new Backup();
             cb.GenerarCopia();
             cb.purga();
+        }
+        private static void Alog()
+        {
+            string Ruta = "C:/Temp";
+            if (Directory.Exists(Ruta))
+            {
+
+            }
+            else
+            {
+                Directory.CreateDirectory(Ruta);
+            }
         }
     }
 }

@@ -100,7 +100,7 @@ namespace SistemaAsistencia.Datos
             }
         }
         /// <summary>
-        /// Se consulta el metodo almacenado el cual contiene los calculos de las entradas y salidas por personal
+        /// Se consulta el proecedimiento almacenado el cual contiene los calculos de las entradas y salidas por personal
         /// Esto lo muestra a traves de una tabla con los datos requeridos
         /// </summary>
         /// <param name="dt">Instancia a la tabla qeu se genera con el procedimiento almacenado</param>
