@@ -253,7 +253,7 @@ namespace SistemaAsistencia
         private void timer1_Tick(object sender, EventArgs e)
         {
             Backup cb = new Backup();
-            cb.GenerarCopia();
+            cb.ejecucion2();
             cb.purga();
         }
     }

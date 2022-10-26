@@ -1,28 +1,18 @@
 ﻿using SistemaAsistencia.Datos;
 using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SistemaAsistencia
 {
     public class Backup
     {
-        string ruta;
         string txtsoftware = "Asistencia";
         string Base_De_datos = "Asistencia";
-        private Thread Hilo;
         private bool acaba = false;
-        public void GenerarCopia()
-        {
-            Hilo = new Thread(new ThreadStart(ejecucion2));
-            Hilo.Start();
-        }
         public void ejecucion2()
         {
             string Ruta = "C:/";
@@ -58,23 +48,22 @@ namespace SistemaAsistencia
             string miCarpeta = "Copias_de_Seguridad_de_" + txtsoftware;
             string ruta_completa = Ruta + miCarpeta;
             DirectoryInfo dir = new DirectoryInfo(ruta_completa);
-            var files = dir.GetFiles();
-            files.AsParallel().Reverse().Skip(3).ForAll((f) => f.Delete());
+            if (dir.GetFiles().Length>=3)
+            {
+                var files = dir.GetFiles();
+                files.AsParallel().Reverse().Skip(3).ForAll((f) => f.Delete());
+            }
+            
         }
 
         public void Restore()
         {
             Conexion.abrir();
-            SqlCommand cdm = new SqlCommand("USE master", Conexion.conectar);
-            cdm.ExecuteNonQuery();
+            string useMaster = "USE master";
+            SqlCommand UseMasterCommand = new SqlCommand(useMaster, Conexion.conectar);
+            UseMasterCommand.ExecuteNonQuery();
 
-            SqlCommand user = new SqlCommand("ALTER DATABASE SET SINGLE_USER WITH ROLLBACK IMMEDIATE",Conexion.conectar);
-            user.ExecuteNonQuery();
-
-            SqlCommand res = new SqlCommand("RESTORE DATABASE", Conexion.conectar);
-            user.ExecuteNonQuery();
-
-            Conexion.cerrar();
+            string Alter1 = string.Format("ALTER DATABASE [{0}] SET Single_User WITH Rollback Unmediate", Conexion.conectar);
         }
     }
 }

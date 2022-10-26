@@ -26,13 +26,9 @@ namespace SistemaAsistencia
         }
         public int Idusuario;
         public string LoginV;
-        string Base_De_datos = "ASISTENCIA";
+        string Base_De_datos = "Asistencia";
         string Servidor = @".\";
         string ruta;
-        private void PanelPadre_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
@@ -113,32 +109,64 @@ namespace SistemaAsistencia
                 DialogResult pregunta = MessageBox.Show("Usted está a punto de restaurar la base de datos," + "asegurese de que el archivo .bak sea reciente, de" + "lo contrario podría perder información y no podrá" + "recuperarla, ¿desea continuar?", "Restauración de base de datos", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (pregunta == DialogResult.Yes)
                 {
-                   
-                    SqlConnection cnn = new SqlConnection("Server=" + Servidor + ";database=master; integrated security=yes");
+                    Conexion.abrir();
                     try
                     {
-                        Backup rest = new Backup();
-                        rest.Restore();
-                        cnn.Open();
-                        string Proceso = "EXEC msdb.dbo.sp_delete_database_backuphistory @database_name = N'" + Base_De_datos + "' USE [master] ALTER DATABASE [" + Base_De_datos + "] SET SINGLE_USER WITH ROLLBACK IMMEDIATE DROP DATABASE [" + Base_De_datos + "] RESTORE DATABASE " + Base_De_datos + " FROM DISK = N'" + ruta + "' WITH FILE = 1, NOUNLOAD, REPLACE, STATS = 10";
-                        SqlCommand BorraRestaura = new SqlCommand(Proceso, cnn);
-                        BorraRestaura.ExecuteNonQuery();
+                        string useMaster = "USE master";
+                        SqlCommand UseMasterCommand = new SqlCommand(useMaster, Conexion.conectar);
+                        UseMasterCommand.ExecuteNonQuery();
+
+                        string Alter1 = string.Format("ALTER DATABASE [{0}] SET Single_User WITH Rollback Immediate", Base_De_datos);
+                        SqlCommand AlterCmd = new SqlCommand(Alter1, Conexion.conectar);
+                        AlterCmd.ExecuteNonQuery();
+
+                        string Restore = string.Format("RESTORE DATABASE {0} FROM DISK='{1}'", Base_De_datos, ruta);
+                        SqlCommand RestoreCmd = new SqlCommand(Restore, Conexion.conectar);
+                        RestoreCmd.ExecuteNonQuery();
+
+                        string Alter2 = string.Format("ALTER DATABASE [{0}] SET Multi_User", Base_De_datos);
+                        SqlCommand Alter2Cmd = new SqlCommand(Alter2, Conexion.conectar);
+                        Alter2Cmd.ExecuteNonQuery();
                         MessageBox.Show("La base de datos ha sido restaurada satisfactoriamente! Vuelve a Iniciar El Aplicativo", "Restauración de base de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Dispose();
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-
-                        RestaurarNoExpress();
+                        MessageBox.Show(ex.Message);
                     }
                     finally
                     {
-                        if (cnn.State == ConnectionState.Open)
-                        {
-                            cnn.Close();
-                        }
-
+                        Conexion.cerrar();
                     }
+                    
+
+
+
+                    //SqlConnection cnn = new SqlConnection("Server=" + Servidor + ";database=master; integrated security=yes");
+                    //try
+                    //{
+                    //    Backup rest = new Backup();
+                    //    rest.Restore();
+                    //    cnn.Open();
+                    //    string Proceso = "EXEC msdb.dbo.sp_delete_database_backuphistory @database_name = N'" + Base_De_datos + "' USE [master] ALTER DATABASE [" + Base_De_datos + "] SET SINGLE_USER WITH ROLLBACK IMMEDIATE DROP DATABASE [" + Base_De_datos + "] RESTORE DATABASE " + Base_De_datos + " FROM DISK = N'" + ruta + "' WITH FILE = 1, NOUNLOAD, REPLACE, STATS = 10";
+                    //    SqlCommand BorraRestaura = new SqlCommand(Proceso, cnn);
+                    //    BorraRestaura.ExecuteNonQuery();
+                    //    MessageBox.Show("La base de datos ha sido restaurada satisfactoriamente! Vuelve a Iniciar El Aplicativo", "Restauración de base de datos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //    Dispose();
+                    //}
+                    //catch (Exception)
+                    //{
+
+                    //    RestaurarNoExpress();
+                    //}
+                    //finally
+                    //{
+                    //    if (cnn.State == ConnectionState.Open)
+                    //    {
+                    //        cnn.Close();
+                    //    }
+
+                    //}
 
                 }
             }
@@ -198,7 +226,7 @@ namespace SistemaAsistencia
         private void timer1_Tick(object sender, EventArgs e)
         {
             Backup cb = new Backup();
-            cb.GenerarCopia();
+            cb.ejecucion2();
             cb.purga();
         }
 

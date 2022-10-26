@@ -15,7 +15,7 @@ namespace SistemaAsistencia
         {
             InitializeComponent();
             timer1.Start();
-            timer1.Interval = 10000;
+            timer1.Interval = 1000000;
             Alog();
         }
         string Identificacion;
@@ -105,9 +105,17 @@ namespace SistemaAsistencia
 
         private void BtnIniciarSesion_Click(object sender, EventArgs e)
         {
-            Dispose();
-            Login frm = new Login();
-            frm.ShowDialog();
+            try
+            {
+                Dispose();
+                Login frm = new Login();
+                frm.ShowDialog();
+            }
+            catch (Exception)
+            {
+                Application.Exit();
+            }
+            
         }
         
         
@@ -139,7 +147,6 @@ namespace SistemaAsistencia
                     {
                         InsertarAsistencias();
                         Backup cb = new Backup();
-                        cb.ejecucion2();
                         Log.WriteLog("✅✅Se inserto la entrada de trabajador con id: " + Identificacion);
                     }
                 }
@@ -147,7 +154,6 @@ namespace SistemaAsistencia
                 {
                     ConfirmarSalida();
                     Backup cb = new Backup();
-                    cb.ejecucion2();
                     Log.WriteLog("✅✅Se confirmo la salida del trabajador con ID: " + Identificacion);
                 }
             }
@@ -156,7 +162,7 @@ namespace SistemaAsistencia
         private void timer1_Tick(object sender, EventArgs e)
         {
             Backup cb = new Backup();
-            cb.GenerarCopia();
+            cb.ejecucion2();
             cb.purga();
         }
         private static void Alog()

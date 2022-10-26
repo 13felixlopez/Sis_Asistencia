@@ -52,7 +52,7 @@ namespace SistemaAsistencia
             // 
             this.textBox17.Format = "{0:d}";
             this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(1.868D), Telerik.Reporting.Drawing.Unit.Cm(0.609D));
+            this.textBox17.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(2.132D), Telerik.Reporting.Drawing.Unit.Cm(0.609D));
             this.textBox17.Style.Font.Bold = true;
             this.textBox17.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.textBox17.StyleName = "";
@@ -61,7 +61,7 @@ namespace SistemaAsistencia
             // textBox15
             // 
             this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(1.868D), Telerik.Reporting.Drawing.Unit.Cm(0.5D));
+            this.textBox15.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(2.132D), Telerik.Reporting.Drawing.Unit.Cm(0.5D));
             this.textBox15.Style.TextAlign = Telerik.Reporting.Drawing.HorizontalAlign.Center;
             this.textBox15.StyleName = "";
             this.textBox15.Value = "=Fields.dia";
@@ -194,7 +194,7 @@ namespace SistemaAsistencia
             // 
             // table1
             // 
-            this.table1.Body.Columns.Add(new Telerik.Reporting.TableBodyColumn(Telerik.Reporting.Drawing.Unit.Cm(1.868D)));
+            this.table1.Body.Columns.Add(new Telerik.Reporting.TableBodyColumn(Telerik.Reporting.Drawing.Unit.Cm(2.132D)));
             this.table1.Body.Rows.Add(new Telerik.Reporting.TableBodyRow(Telerik.Reporting.Drawing.Unit.Cm(0.609D)));
             this.table1.Body.SetCellContent(0, 0, this.textBox18);
             tableGroup2.Name = "group1";
@@ -248,12 +248,12 @@ namespace SistemaAsistencia
             tableGroup3.ReportItem = this.textBox19;
             tableGroup3.Sortings.Add(new Telerik.Reporting.Sorting("=Fields.Nombres", Telerik.Reporting.SortDirection.Asc));
             this.table1.RowGroups.Add(tableGroup3);
-            this.table1.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(9.708D), Telerik.Reporting.Drawing.Unit.Cm(1.718D));
+            this.table1.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(9.973D), Telerik.Reporting.Drawing.Unit.Cm(1.718D));
             // 
             // textBox18
             // 
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(1.868D), Telerik.Reporting.Drawing.Unit.Cm(0.609D));
+            this.textBox18.Size = new Telerik.Reporting.Drawing.SizeU(Telerik.Reporting.Drawing.Unit.Cm(2.132D), Telerik.Reporting.Drawing.Unit.Cm(0.609D));
             this.textBox18.Style.BorderStyle.Default = Telerik.Reporting.Drawing.BorderType.None;
             this.textBox18.Style.BorderStyle.Top = Telerik.Reporting.Drawing.BorderType.Dashed;
             this.textBox18.StyleName = "";

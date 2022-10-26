@@ -49,6 +49,8 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panelreloj = new System.Windows.Forms.Panel();
+            this.lblReloj = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel21 = new System.Windows.Forms.Panel();
@@ -68,8 +70,6 @@
             this.dlg = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Reloj = new System.Windows.Forms.Timer(this.components);
-            this.panelreloj = new System.Windows.Forms.Panel();
-            this.lblReloj = new System.Windows.Forms.Label();
             this.panel5.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -78,12 +78,12 @@
             this.panelBienvenida.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panelreloj.SuspendLayout();
             this.panel18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel11.SuspendLayout();
-            this.panelreloj.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel9
@@ -245,7 +245,6 @@
             this.PanelPadre.Name = "PanelPadre";
             this.PanelPadre.Size = new System.Drawing.Size(829, 682);
             this.PanelPadre.TabIndex = 3;
-            this.PanelPadre.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelPadre_Paint);
             // 
             // panelBienvenida
             // 
@@ -318,6 +317,27 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(165, 468);
             this.panel4.TabIndex = 3;
+            // 
+            // panelreloj
+            // 
+            this.panelreloj.Controls.Add(this.lblReloj);
+            this.panelreloj.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelreloj.Location = new System.Drawing.Point(0, 414);
+            this.panelreloj.Name = "panelreloj";
+            this.panelreloj.Size = new System.Drawing.Size(165, 54);
+            this.panelreloj.TabIndex = 8;
+            // 
+            // lblReloj
+            // 
+            this.lblReloj.AutoSize = true;
+            this.lblReloj.BackColor = System.Drawing.Color.Transparent;
+            this.lblReloj.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReloj.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblReloj.Location = new System.Drawing.Point(30, 12);
+            this.lblReloj.Name = "lblReloj";
+            this.lblReloj.Size = new System.Drawing.Size(90, 28);
+            this.lblReloj.TabIndex = 0;
+            this.lblReloj.Text = "label1";
             // 
             // panel18
             // 
@@ -510,27 +530,6 @@
             // 
             this.Reloj.Tick += new System.EventHandler(this.Reloj_Tick);
             // 
-            // panelreloj
-            // 
-            this.panelreloj.Controls.Add(this.lblReloj);
-            this.panelreloj.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelreloj.Location = new System.Drawing.Point(0, 414);
-            this.panelreloj.Name = "panelreloj";
-            this.panelreloj.Size = new System.Drawing.Size(165, 54);
-            this.panelreloj.TabIndex = 8;
-            // 
-            // lblReloj
-            // 
-            this.lblReloj.AutoSize = true;
-            this.lblReloj.BackColor = System.Drawing.Color.Transparent;
-            this.lblReloj.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReloj.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblReloj.Location = new System.Drawing.Point(30, 12);
-            this.lblReloj.Name = "lblReloj";
-            this.lblReloj.Size = new System.Drawing.Size(90, 28);
-            this.lblReloj.TabIndex = 0;
-            this.lblReloj.Text = "label1";
-            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -550,13 +549,13 @@
             this.panelBienvenida.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panelreloj.ResumeLayout(false);
+            this.panelreloj.PerformLayout();
             this.panel18.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
-            this.panelreloj.ResumeLayout(false);
-            this.panelreloj.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -222,7 +222,7 @@ namespace SistemaAsistencia.Datos
 			finally
 			{
 				Conexion.cerrar();
-				Log.WriteCon("Se cerró la conexión en Buscar_Usuarios");
+				Log.WriteCon("Se cerró la conexión en Buscar_Usuarios 🔐🔐");
 			}
 		}
 		public void VerificarUsuarios(ref string Indicador)
