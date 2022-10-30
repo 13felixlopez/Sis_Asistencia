@@ -70,6 +70,7 @@
             this.dlg = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Reloj = new System.Windows.Forms.Timer(this.components);
+            this.helpProvider = new System.Windows.Forms.HelpProvider();
             this.panel5.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -530,6 +531,10 @@
             // 
             this.Reloj.Tick += new System.EventHandler(this.Reloj_Tick);
             // 
+            // helpProvider
+            // 
+            this.helpProvider.HelpNamespace = "C:\\Sis-Asistencia.chm";
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -537,7 +542,11 @@
             this.ClientSize = new System.Drawing.Size(1000, 749);
             this.Controls.Add(this.PanelPadre);
             this.Controls.Add(this.panel1);
+            this.helpProvider.SetHelpKeyword(this, "Sis");
+            this.helpProvider.SetHelpString(this, "asistencia");
+            this.KeyPreview = true;
             this.Name = "MenuPrincipal";
+            this.helpProvider.SetShowHelp(this, true);
             this.Text = "Menu Principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
@@ -603,6 +612,7 @@
         private System.Windows.Forms.Panel panelreloj;
         private System.Windows.Forms.Label lblReloj;
         private System.Windows.Forms.Timer Reloj;
+        private System.Windows.Forms.HelpProvider helpProvider;
     }
 }
 
