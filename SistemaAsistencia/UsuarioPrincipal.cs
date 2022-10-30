@@ -10,6 +10,7 @@ namespace SistemaAsistencia
 {
     public partial class UsuarioPrincipal : MaterialSkin.Controls.MaterialForm
     {
+        AES aes = new AES();
         public UsuarioPrincipal()
         {
             InitializeComponent();
@@ -50,7 +51,7 @@ namespace SistemaAsistencia
             Dusuarios funcion = new Dusuarios();
             parametros.Nombre = txtnombre.Text;
             parametros.Login = TXTUSUARIO.Text;
-            parametros.Password = TXTCONTRASEÑA.Text;
+            parametros.Password = Encrip.Encriptar(Encrip.Encriptar(TXTCONTRASEÑA.Text));
             MemoryStream ms = new MemoryStream();
             Icono.Image.Save(ms, Icono.Image.RawFormat);
             parametros.Icono = ms.GetBuffer();

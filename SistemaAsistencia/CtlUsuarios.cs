@@ -14,6 +14,7 @@ namespace SistemaAsistencia
 {
     public partial class CtlUsuarios : UserControl
     {
+        AES aes = new AES();
         public CtlUsuarios()
         {
             InitializeComponent();
@@ -105,7 +106,7 @@ namespace SistemaAsistencia
             Dusuarios funcion = new Dusuarios();
             parametros.Nombre = txtnombre.Text;
             parametros.Login = txtusuario.Text;
-            parametros.Password = txtcontraseña.Text;
+            parametros.Password =Encrip.Encriptar(Encrip.Encriptar(txtcontraseña.Text));
             MemoryStream ms = new MemoryStream();
             Icono.Image.Save(ms, Icono.Image.RawFormat);
             parametros.Icono = ms.GetBuffer();
@@ -346,8 +347,7 @@ namespace SistemaAsistencia
                 txtusuario.Enabled = true;
                 datalistadoModulos.Enabled = true;
             }
-            txtcontraseña.Text = datalistadoUsuarios.SelectedCells[5].Value.ToString();
-
+            txtcontraseña.Text = Encrip.DesEncriptar(Encrip.DesEncriptar(datalistadoUsuarios.SelectedCells[5].Value.ToString()));
             Icono.BackgroundImage = null;
             byte[] b = (byte[])(datalistadoUsuarios.SelectedCells[6].Value);
             MemoryStream ms = new MemoryStream(b);
@@ -432,7 +432,7 @@ namespace SistemaAsistencia
             parametros.IdUsuario = Idusuario;
             parametros.Nombre = txtnombre.Text;
             parametros.Login = txtusuario.Text;
-            parametros.Password = txtcontraseña.Text;
+            parametros.Password =Encrip.Encriptar(Encrip.Encriptar(txtcontraseña.Text));
             MemoryStream ms = new MemoryStream();
             Icono.Image.Save(ms, Icono.Image.RawFormat);
             parametros.Icono = ms.GetBuffer();

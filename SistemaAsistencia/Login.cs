@@ -22,7 +22,6 @@ namespace SistemaAsistencia
             timer1.Interval = 1000000;
         }
         string Usuario;
-        string User;
         int Idusuario;
         int Contador;
         string Indicador;
@@ -155,9 +154,13 @@ namespace SistemaAsistencia
 
         private void validarUsuarios()
         {
+            AES aes = new AES();
+            string algo;
             Lusuarios parametros = new Lusuarios();
             Dusuarios funcion = new Dusuarios();
-            parametros.Password = txtcontraseña.Text;
+           // algo = Encrip.Encriptar((aes.Encrypt(txtcontraseña.Text, Desencryptacion.appPwdUnique, int.Parse("256"))));
+            algo = Encrip.Encriptar(Encrip.Encriptar(txtcontraseña.Text));
+            parametros.Password = algo;
             parametros.Login = Usuario;
             funcion.validarUsuario(parametros, ref Idusuario);
             if (Idusuario>0)

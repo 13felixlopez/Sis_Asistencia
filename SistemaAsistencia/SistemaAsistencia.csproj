@@ -114,6 +114,7 @@
     <Compile Include="EleccionServidor.Designer.cs">
       <DependentUpon>EleccionServidor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Encrip.cs" />
     <Compile Include="InstacionBd.cs">
       <SubType>Form</SubType>
     </Compile>
