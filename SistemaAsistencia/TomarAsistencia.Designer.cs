@@ -69,6 +69,7 @@ namespace SistemaAsistencia
             this.PictureBox2 = new System.Windows.Forms.PictureBox();
             this.Panel6 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.helpProvider = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadohoras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadoacumuladohorASDIA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datalistadohorastotales)).BeginInit();
@@ -574,6 +575,11 @@ namespace SistemaAsistencia
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // helpProvider
+            // 
+            this.helpProvider.HelpNamespace = "C:\\Users\\lfeli\\source\\repos\\SistemaAsistencia\\SistemaAsistencia\\Resources\\Sis-Asi" +
+    "stencia.chm";
+            // 
             // TomarAsistencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -583,7 +589,11 @@ namespace SistemaAsistencia
             this.Controls.Add(this.panelObservacion);
             this.Controls.Add(this.Panel1);
             this.Controls.Add(this.Panel6);
+            this.helpProvider.SetHelpKeyword(this, "Registrar Asistencia");
+            this.helpProvider.SetHelpString(this, "Registrar Asistencia");
+            this.KeyPreview = true;
             this.Name = "TomarAsistencia";
+            this.helpProvider.SetShowHelp(this, true);
             this.Text = "TomarAsistencia";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.datalistadohoras)).EndInit();
@@ -645,5 +655,6 @@ namespace SistemaAsistencia
         internal System.Windows.Forms.Panel Panel6;
         internal System.Windows.Forms.Button btnGrabar;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.HelpProvider helpProvider;
     }
 }
