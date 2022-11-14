@@ -533,8 +533,8 @@
             // 
             // helpProvider
             // 
-            this.helpProvider.HelpNamespace = "C:\\Users\\lfeli\\source\\repos\\SistemaAsistencia\\SistemaAsistencia\\Resources\\Sis-Asi" +
-    "stencia.chm";
+            this.helpProvider.HelpNamespace = "C:\\Users\\lfeli\\source\\repos\\SistemaAsistencia\\SistemaAsistencia\\Sis-Asistencia.ch" +
+    "m";
             // 
             // MenuPrincipal
             // 

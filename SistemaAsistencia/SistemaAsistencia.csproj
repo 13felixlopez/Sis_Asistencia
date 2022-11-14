@@ -227,6 +227,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Resources\Sis-Asistencia.chm" />
+    <None Include="Sis-Asistencia.chm" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
