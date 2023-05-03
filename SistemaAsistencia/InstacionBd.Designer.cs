@@ -183,7 +183,7 @@ namespace SistemaAsistencia
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(134, 20);
             this.txtusuario.TabIndex = 635;
-            this.txtusuario.Text = "FELIX\\lfeli";
+            this.txtusuario.Text = "Fermin";
             // 
             // panel8
             // 
@@ -374,6 +374,7 @@ namespace SistemaAsistencia
             this.lblcontraseña.Name = "lblcontraseña";
             this.lblcontraseña.Size = new System.Drawing.Size(134, 20);
             this.lblcontraseña.TabIndex = 621;
+            this.lblcontraseña.Text = "13Fermin";
             // 
             // lblnombredeservicio
             // 

@@ -175,6 +175,9 @@
     <Compile Include="UsuarioPrincipal.Designer.cs">
       <DependentUpon>UsuarioPrincipal.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ConexionRemota.resx">
+      <DependentUpon>ConexionRemota.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CtlUsuarios.resx">
       <DependentUpon>CtlUsuarios.cs</DependentUpon>
     </EmbeddedResource>
